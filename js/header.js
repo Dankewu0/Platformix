@@ -2,6 +2,7 @@ const burgerBtn = document.getElementById("burgerBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const menuItems = document.querySelectorAll(".menu-item");
 const headerContainer = document.querySelector(".container");
+const pageHeader = document.querySelector("header");
 
 function updateGap(item) {
   const existingCorners = headerContainer.querySelectorAll(".corner-js");
@@ -138,3 +139,11 @@ window.addEventListener("resize", () => {
     updateGap(activeItem);
   }
 });
+
+function updateHeaderScrollState() {
+  if (!pageHeader) return;
+  pageHeader.classList.toggle("header--scrolled", window.scrollY > 10);
+}
+
+window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
+updateHeaderScrollState();

@@ -390,7 +390,8 @@ body {
 }
 
 header {
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 102;
@@ -422,6 +423,7 @@ header .container::after {
   background: #4a5670;
   width: calc(var(--gap-left, 0px) - 6px);
   transition: width 0.3s ease;
+  opacity: 0;
 }
 header .container::before {
   content: "";
@@ -432,6 +434,7 @@ header .container::before {
   background: #4a5670;
   width: calc(100% - var(--gap-left, 0px) - var(--gap-width, 0px) - 12px);
   transition: width 0.3s ease;
+  opacity: 0;
 }
 header .container .corner-mask {
   display: none;
@@ -741,10 +744,20 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 
 @media (min-width: 1025px) {
   header .container {
+    background: transparent;
+    backdrop-filter: none;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transition: background 0.25s ease, backdrop-filter 0.25s ease, border-color 0.25s ease;
+  }
+  header.header--scrolled .container {
     background: rgba(234, 235, 237, 0.1);
     backdrop-filter: blur(25px);
     border-left: 1px solid rgba(177, 202, 250, 0.35);
     border-right: 1px solid rgba(177, 202, 250, 0.35);
+  }
+  header.header--scrolled .container::before, header.header--scrolled .container::after {
+    opacity: 1;
   }
 }
 @media (max-width: 1024px) {
@@ -895,7 +908,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .hero .hero__content .hero__description p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 20pt;
+  font-size: 16pt;
   line-height: 110%;
   opacity: 0.8;
   margin: 0;
@@ -999,15 +1012,17 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   margin-top: 0;
 }
 .hero .hero__slider .slider-card p {
-  font-family: "BeauSans-Regular", sans-serif;
-  font-size: clamp(12px, 4vw, 16px);
+  font-family: "PF Encore Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: clamp(14px, 2.2vw, 20px);
   line-height: 1.3;
   opacity: 0.6;
   margin: 0;
   width: 100%;
   max-width: 100%;
   white-space: normal;
-  word-wrap: break-word;
+  word-wrap: normal;
+  overflow-wrap: normal;
   flex-grow: 1;
 }
 .hero .hero__slider .slider-card__footer {
@@ -1049,13 +1064,13 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .hero .hero__slider .slider-card__footer .slider-arrow .arrow-wrapper .rhomb-side.left {
   left: 5px;
-  background: rgba(149, 156, 174, 0.8);
+  background: #afb5c5;
   border-radius: 5px;
   transform: rotate(-45deg);
 }
 .hero .hero__slider .slider-card__footer .slider-arrow .arrow-wrapper .rhomb-side.right {
   right: 2px;
-  background: rgba(149, 156, 174, 0.8);
+  background: #afb5c5;
   border-radius: 5px;
   transform: rotate(-45deg);
   z-index: 1;
@@ -1074,12 +1089,12 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .hero .hero__slider .slider-card__footer .btn-more {
   font-family: "28ExpandedRegular", sans-serif;
-  background: linear-gradient(360deg, #7081a8 0%, #576483 100%);
+  background: linear-gradient(176.75deg, #17203f 2.81%, #5b6893 97.46%);
   color: white;
   text-decoration: none;
   padding: 12px 24px;
-  border-radius: 12px;
-  font-size: 9pt;
+  border-radius: 10px;
+  font-size: 14px;
   transition: 0.3s;
   position: relative;
   z-index: 1;
@@ -1088,16 +1103,17 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 1px;
-  background: linear-gradient(0deg, #7e94c5 0%, rgba(177, 202, 250, 0) 100%);
+  background: linear-gradient(180deg, #1a1935 0%, #807dc9 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
 }
 .hero .hero__slider .slider-card__footer .btn-more:hover {
-  box-shadow: 0px 10px 15px 0px rgba(23, 32, 63, 0.4);
+  background: linear-gradient(176.75deg, #17203f 2.81%, #5e77cd 97.46%);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 1440px) {
   .hero .container {
@@ -1519,11 +1535,19 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 
 .advantages {
-  background: linear-gradient(180deg, #00101d 0%, rgba(0, 16, 29, 0) 100%), url("../public/composition.jpg") no-repeat center/cover;
+  background: url("../public/composition.jpg") no-repeat center/cover;
   color: white;
   position: relative;
   height: 951px;
   padding-bottom: 100px;
+}
+.advantages::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 16, 29, 0) 58%, rgba(0, 16, 29, 0.92) 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 .advantages .advantages-sticky-wrapper {
   position: relative;
@@ -1540,6 +1564,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   flex-direction: column;
   position: relative;
+  z-index: 1;
 }
 .advantages h2 {
   font-family: "28ExpandedRegular", sans-serif;
@@ -1563,10 +1588,10 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   align-items: center;
 }
 .advantages .advantages-top .advantages-title-row img {
-  width: 173px;
+  width: 240px;
   height: 1px;
   object-fit: contain;
-  transform: translateY(-30px);
+  transform: translateY(-38px);
 }
 .advantages .advantages-top p {
   font-family: "PF Encore Sans Pro", sans-serif;
@@ -1605,9 +1630,15 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   gap: 0;
   align-items: center;
+  font-family: "PF Encore Sans Pro", sans-serif;
+  font-size: 16pt;
+  font-weight: 300;
   width: max-content;
   will-change: transform;
   transition: transform 0.1s ease-out;
+}
+.advantages .advantages__track * {
+  font-weight: inherit;
 }
 @media (min-width: 1025px) {
   .advantages .advantages__track {
@@ -1624,7 +1655,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   padding: 0 20px;
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: 16pt;
   background: linear-gradient(93.43deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 47.66%, rgba(255, 255, 255, 0.15) 100%);
   border: 1px solid rgba(160, 178, 212, 0.4);
   backdrop-filter: blur(11px);
@@ -1710,7 +1741,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   .advantages .adv:nth-child(n) {
     width: 260px;
     height: 120px;
-    font-size: 14px;
+    font-size: 16pt;
   }
 }
 @media (max-width: 767px) {
@@ -1758,7 +1789,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   .advantages .adv:nth-child(n) {
     width: 260px;
     height: 120px;
-    font-size: 14px;
+    font-size: 16pt;
   }
 }
 
@@ -2160,7 +2191,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   margin-bottom: -30px;
 }
 .partners .container {
-  max-width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 56px;
   display: flex;
@@ -2825,6 +2856,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   font-weight: 600;
   font-size: 64pt;
   line-height: 130%;
+  white-space: nowrap;
 }
 .achievements__stats .stat-item .stat-item__line {
   display: none;
@@ -2911,7 +2943,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     grid-column: 1;
   }
   .achievements .achievements__stats .stat-item p {
-    font-size: 14px;
+    font-size: 20pt;
   }
   .achievements .achievements__stats .stat-item span {
     font-size: 56px;
@@ -2988,7 +3020,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     grid-column: 1;
   }
   .achievements .achievements__stats .stat-item p {
-    font-size: 14px;
+    font-size: 20pt;
   }
   .achievements .achievements__stats .stat-item span {
     font-size: 48px;
@@ -3060,22 +3092,22 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .feedback .feedback__form .form-row {
   display: flex;
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 .feedback .feedback__form .form-row .form-group {
   flex: 1;
   margin-bottom: 0;
 }
 .feedback .feedback__form .form-group {
-  margin-bottom: 30px;
+  margin-bottom: 22px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 .feedback .feedback__form .form-group label {
   font-family: "18ExpandedSemiBold", sans-serif;
   font-weight: 600;
-  font-size: 15pt;
+  font-size: 13pt;
   line-height: 120%;
   color: #0d1b3e;
 }
@@ -3133,7 +3165,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: radial-gradient(circle, #2c3653, #455273);
+  background: linear-gradient(137deg, #30466f 0%, #3f5c90 52%, #2b3f67 100%);
   border-radius: 10px;
   padding: 12px 20px;
   cursor: pointer;
@@ -3150,7 +3182,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   height: 20px;
 }
 .feedback .feedback__form .form-bottom {
-  margin-top: 40px;
+  margin-top: 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3168,22 +3200,11 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   flex-shrink: 0;
   appearance: none;
   -webkit-appearance: none;
-  background: linear-gradient(90deg, #3E60A0 0%, #1B2A60 36.05%, #1C264A 100%);
+  background: rgba(160, 178, 212, 0.35);
+  border: 1px solid rgba(160, 178, 212, 0.85);
   border-radius: 4px;
   position: relative;
   cursor: pointer;
-}
-.feedback .feedback__form .form-bottom .checkbox-label input::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 4px;
-  padding: 1px;
-  background: linear-gradient(137.79deg, #EAEBED 0%, #2E4081 100%, #EAEBED 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
 }
 .feedback .feedback__form .form-bottom .checkbox-label input:checked::after {
   content: "";
@@ -3192,7 +3213,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   top: 3px;
   width: 6px;
   height: 10px;
-  border: solid rgba(254, 254, 255, 0.44);
+  border: solid #5f6d8d;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -3220,21 +3241,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   width: 20px;
   height: 20px;
 }
-.feedback .feedback__form .form-bottom .form-actions button {
-  background: #eb3300;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  padding: 0 45px;
-  height: 52px;
-  font-family: "28ExpandedRegular", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.feedback .feedback__form .form-bottom .form-actions button:hover {
-  opacity: 0.9;
+.feedback .feedback__form .form-bottom .form-actions .btn-news {
+  width: 285px;
 }
 
 @media (max-width: 1200px) {
@@ -3316,7 +3324,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     justify-content: flex-start;
     box-sizing: border-box;
   }
-  .feedback .feedback__form .form-bottom .form-actions button {
+  .feedback .feedback__form .form-bottom .form-actions .btn-news {
     width: 100%;
   }
 }
@@ -3387,7 +3395,7 @@ footer .footer__column ul li a {
   text-decoration: none;
   color: #ffffff;
   opacity: 0.7;
-  font-family: "BeauSans-Light", sans-serif;
+  font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 110%;
@@ -3432,7 +3440,8 @@ footer .footer__contacts-block .footer__contacts-content .footer__contact-info {
 footer .footer__contacts-block .footer__contacts-content .footer__contact-info a {
   text-decoration: none;
   color: #ffffff;
-  font-family: "BeauSans-Regular", sans-serif;
+  font-family: "PF Encore Sans Pro", sans-serif;
+  font-weight: 300;
   font-size: 14px;
   opacity: 0.7;
   transition: opacity 0.2s;
@@ -3442,7 +3451,8 @@ footer .footer__contacts-block .footer__contacts-content .footer__contact-info a
 }
 footer .footer__contacts-block .footer__contacts-content address {
   font-style: normal;
-  font-family: "BeauSans-Regular", sans-serif;
+  font-family: "PF Encore Sans Pro", sans-serif;
+  font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
   opacity: 0.7;
@@ -3452,7 +3462,7 @@ footer .footer__legal {
   display: flex;
   align-items: center;
   gap: 40px;
-  font-family: "BeauSans-Light", sans-serif;
+  font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 110%;
@@ -3463,8 +3473,8 @@ footer .footer__legal span {
 footer .footer__legal a {
   text-decoration: none;
   color: #ffffff;
-  font-family: "BeauSans-Bold", sans-serif;
-  font-weight: 700;
+  font-family: "PF Encore Sans Pro", sans-serif;
+  font-weight: 300;
   transition: opacity 0.2s;
 }
 footer .footer__legal a:hover {

@@ -1,5 +1,6 @@
 header {
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 102;
@@ -31,6 +32,7 @@ header {
       background: #4a5670;
       width: calc(var(--gap-left, 0px) - 6px);
       transition: width 0.3s ease;
+      opacity: 0;
     }
     &::before {
       content: "";
@@ -41,6 +43,7 @@ header {
       background: #4a5670;
       width: calc(100% - var(--gap-left, 0px) - var(--gap-width, 0px) - 12px);
       transition: width 0.3s ease;
+      opacity: 0;
     }
     .corner-mask {
       display: none;
@@ -382,10 +385,23 @@ header {
 
 @media (min-width: 1025px) {
   header .container {
+    background: transparent;
+    backdrop-filter: none;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transition: background 0.25s ease, backdrop-filter 0.25s ease, border-color 0.25s ease;
+  }
+
+  header.header--scrolled .container {
     background: rgba(234, 235, 237, 0.1);
     backdrop-filter: blur(25px);
     border-left: 1px solid rgba(177, 202, 250, 0.35);
     border-right: 1px solid rgba(177, 202, 250, 0.35);
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
   }
 }
 

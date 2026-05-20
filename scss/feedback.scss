@@ -70,7 +70,7 @@
     .form-row {
       display: flex;
       gap: 30px;
-      margin-bottom: 30px;
+      margin-bottom: 22px;
 
       .form-group {
         flex: 1;
@@ -79,15 +79,15 @@
     }
 
     .form-group {
-      margin-bottom: 30px;
+      margin-bottom: 22px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
 
       label {
         font-family: "18ExpandedSemiBold", sans-serif;
         font-weight: 600;
-        font-size: 15pt;
+        font-size: 13pt;
         line-height: 120%;
         color: #0d1b3e;
 
@@ -154,7 +154,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: radial-gradient(circle, #2c3653, #455273);
+      background: linear-gradient(
+        137deg,
+        #30466f 0%,
+        #3f5c90 52%,
+        #2b3f67 100%
+      );
       border-radius: 10px;
       padding: 12px 20px;
       cursor: pointer;
@@ -174,7 +179,7 @@
     }
 
     .form-bottom {
-      margin-top: 40px;
+      margin-top: 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -192,25 +197,11 @@
           flex-shrink: 0;
           appearance: none;
           -webkit-appearance: none;
-          background: linear-gradient(90deg, #3E60A0 0%, #1B2A60 36.05%, #1C264A 100%);
+          background: rgba(160, 178, 212, 0.35);
+          border: 1px solid rgba(160, 178, 212, 0.85);
           border-radius: 4px;
           position: relative;
           cursor: pointer;
-
-          &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 4px;
-            padding: 1px;
-            background: linear-gradient(137.79deg, #EAEBED 0%, #2E4081 100%, #EAEBED 100%);
-            -webkit-mask:
-              linear-gradient(#fff 0 0) content-box,
-              linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-          }
 
           &:checked::after {
             content: "";
@@ -219,7 +210,7 @@
             top: 3px;
             width: 6px;
             height: 10px;
-            border: solid rgba(254, 254, 255, 0.44);
+            border: solid #5f6d8d;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
           }
@@ -253,22 +244,8 @@
           }
         }
 
-        button {
-          background: #eb3300;
-          color: #ffffff;
-          border: none;
-          border-radius: 10px;
-          padding: 0 45px;
-          height: 52px;
-          font-family: "28ExpandedRegular", sans-serif;
-          font-size: 18px;
-          font-weight: 700;
-          cursor: pointer;
-          transition: 0.2s;
-
-          &:hover {
-            opacity: 0.9;
-          }
+        .btn-news {
+          width: 285px;
         }
       }
     }
@@ -365,7 +342,7 @@
             box-sizing: border-box;
           }
 
-          button {
+          .btn-news {
             width: 100%;
           }
         }

@@ -1,11 +1,18 @@
 .advantages {
-  background:
-    linear-gradient(180deg, #00101d 0%, rgba(0, 16, 29, 0) 100%),
-    url("../public/composition.jpg") no-repeat center / cover;
+  background: url("../public/composition.jpg") no-repeat center / cover;
   color: white;
   position: relative;
   height: 951px;
   padding-bottom: 100px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 16, 29, 0) 58%, rgba(0, 16, 29, 0.92) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
 
   .advantages-sticky-wrapper {
     position: relative;
@@ -23,6 +30,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    z-index: 1;
   }
 
   h2 {
@@ -49,10 +57,10 @@
       align-items: center;
 
       img {
-        width: 173px;
+        width: 240px;
         height: 1px;
         object-fit: contain;
-        transform: translateY(-30px);
+        transform: translateY(-38px);
       }
     }
 
@@ -99,9 +107,16 @@
     display: flex;
     gap: 0;
     align-items: center;
+    font-family: "PF Encore Sans Pro", sans-serif;
+    font-size: 16pt;
+    font-weight: 300;
     width: max-content;
     will-change: transform;
     transition: transform 0.1s ease-out;
+
+    * {
+      font-weight: inherit;
+    }
 
     @media (min-width: 1025px) {
       margin: 0 auto;
@@ -118,7 +133,7 @@
     padding: 0 20px;
     font-family: "PF Encore Sans Pro", sans-serif;
     font-weight: 300;
-    font-size: 14pt;
+    font-size: 16pt;
     background: linear-gradient(
       93.43deg,
       rgba(255, 255, 255, 0.15) 0%,
@@ -223,7 +238,7 @@
       &:nth-child(n) {
         width: 260px;
         height: 120px;
-        font-size: 14px;
+        font-size: 16pt;
       }
     }
   }
@@ -280,7 +295,7 @@
     .adv:nth-child(n) {
       width: 260px;
       height: 120px;
-      font-size: 14px;
+      font-size: 16pt;
     }
   }
 }

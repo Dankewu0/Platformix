@@ -74,7 +74,7 @@ footer {
           text-decoration: none;
           color: #ffffff;
           opacity: 0.7;
-          font-family: "BeauSans-Light", sans-serif;
+          font-family: "PF Encore Sans Pro", sans-serif;
           font-weight: 300;
           font-size: 14px;
           line-height: 110%;
@@ -127,7 +127,8 @@ footer {
         a {
           text-decoration: none;
           color: #ffffff;
-          font-family: "BeauSans-Regular", sans-serif;
+          font-family: "PF Encore Sans Pro", sans-serif;
+          font-weight: 300;
           font-size: 14px;
           opacity: 0.7;
           transition: opacity 0.2s;
@@ -140,7 +141,8 @@ footer {
 
       address {
         font-style: normal;
-        font-family: "BeauSans-Regular", sans-serif;
+        font-family: "PF Encore Sans Pro", sans-serif;
+        font-weight: 300;
         font-size: 14px;
         line-height: 1.4;
         opacity: 0.7;
@@ -153,7 +155,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 40px;
-    font-family: "BeauSans-Light", sans-serif;
+    font-family: "PF Encore Sans Pro", sans-serif;
     font-weight: 300;
     font-size: 14px;
     line-height: 110%;
@@ -165,8 +167,8 @@ footer {
     a {
       text-decoration: none;
       color: #ffffff;
-      font-family: "BeauSans-Bold", sans-serif;
-      font-weight: 700;
+      font-family: "PF Encore Sans Pro", sans-serif;
+      font-weight: 300;
       transition: opacity 0.2s;
 
       &:hover {
