@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platformix</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="./js/header.js" defer></script>
+    <script src="./js/achieve-slider.js" defer></script>
+    <script src="./js/clients-scroll.js" defer></script>
+    <script src="./js/advantages-swiper.js" defer></script>
+    <script src="./js/partners-infinite.js" defer></script>
+    <script src="./js/main-slider.js" defer></script>
+    <script src="./js/solutionsservices-scroll.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <img
+          src="./public/platformix.svg"
+          alt="Платформикс"
+          class="platformix"
+        />
+
+        <nav class="menu">
+          <div class="menu-item">
+            <button>
+              <img src="public/tick_down.svg" />
+              О компании
+            </button>
+            <div>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <button>
+              <img src="public/tick_down.svg" />
+              Решения и услуги
+            </button>
+            <div>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <button>
+              <img src="public/tick_down.svg" />
+              Медиацентр
+            </button>
+            <div>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <button>
+              <img src="public/tick_down.svg" />
+              Карьера
+            </button>
+            <div>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <button>
+              <img src="public/tick_down.svg" />
+              Контакты
+            </button>
+            <div>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+              <a href="#">Lorem ipsum</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="phone">+7 (495) 967-8050</div>
+
+        <button class="phone-btn">
+          <img src="../public/phone.svg" />
+        </button>
+
+        <button class="burger" id="burgerBtn">
+          <span class="burger-icon">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <img
+          src="./public/platformix.svg"
+          alt="Платформикс"
+          class="platformix"
+        />
+        <button class="close-btn">
+          <img src="./public/cross.svg" alt="" />
+        </button>
+
+        <div class="menu-group">
+          <button class="company-menu-group-btn">
+            <img src="public/tick_down.svg" />
+            <span>О компании</span>
+          </button>
+          <div class="submenu">
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <button class="menu-group-btn">
+            <img src="public/tick_down.svg" />
+            <span>Решения и услуги</span>
+          </button>
+          <div class="submenu">
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <button class="menu-group-btn">
+            <img src="public/tick_down.svg" />
+            <span>Медиацентр</span>
+          </button>
+          <div class="submenu">
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <button class="menu-group-btn">
+            <img src="public/tick_down.svg" />
+            <span>Карьера</span>
+          </button>
+          <div class="submenu">
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <button class="menu-group-btn">
+            <img src="public/tick_down.svg" />
+            <span>Контакты</span>
+          </button>
+          <div class="submenu">
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+            <a href="#">Lorem ipsum</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <h1>Системный <span>интегратор</span></h1>
+          <div class="hero__description">
+            <img src="public/red-line.svg" alt="красная линия" />
+            <p>
+              Предоставляет полный спектр услуг, связанных с инфраструктурной
+              интеграцией и обеспечением информационной безопасности на
+              современном предприятии
+            </p>
+          </div>
+        </div>
+
+        <div class="hero__slider">
+          <div
+            class="slider-card slider-card--side-left"
+            id="prevCard"
+            data-pos="-1"
+          >
+            <img
+              src="public/arrow-left.svg"
+              alt="prev"
+              class="tablet-arrow tablet-arrow--left"
+            />
+            <div class="slider-card__content">
+              <h3></h3>
+              <p></p>
+            </div>
+            <div class="slider-card__footer">
+              <button class="slider-arrow">
+                <div class="arrow-wrapper">
+                  <img
+                    src="public/rhomb-achieve.svg"
+                    alt="rhomb"
+                    class="rhomb-side left"
+                  />
+                  <span class="arrow-bg"></span>
+                  <img
+                    src="public/rhomb-achieve.svg"
+                    alt="rhomb"
+                    class="rhomb-side right"
+                  />
+                  <img
+                    src="public/arrow-right.svg"
+                    alt="arrow"
+                    class="arrow-icon"
+                  />
+                </div>
+              </button>
+              <a href="#" class="btn-more">Подробнее</a>
+            </div>
+          </div>
+
+          <div
+            class="slider-card slider-card--side-right"
+            id="nextCard"
+            data-pos="1"
+          >
+            <img
+              src="public/arrow-right.svg"
+              alt="next"
+              class="tablet-arrow tablet-arrow--right"
+            />
+            <div class="slider-card__content">
+              <h3></h3>
+              <p></p>
+            </div>
+            <div class="slider-card__footer">
+              <button class="slider-arrow">
+                <div class="arrow-wrapper">
+                  <img
+                    src="public/rhomb-achieve.svg"
+                    alt="rhomb"
+                    class="rhomb-side left"
+                  />
+                  <span class="arrow-bg"></span>
+                  <img
+                    src="public/rhomb-achieve.svg"
+                    alt="rhomb"
+                    class="rhomb-side right"
+                  />
+                  <img
+                    src="public/arrow-right.svg"
+                    alt="arrow"
+                    class="arrow-icon"
+                  />
+                </div>
+              </button>
+              <a href="#" class="btn-more">Подробнее</a>
+            </div>
+          </div>
+
+          <div class="slider-card slider-card--main" id="mainCard" data-pos="0">
+            <div class="slider-card__content">
+              <h3 id="cardTitle"></h3>
+              <p id="cardDesc"></p>
+            </div>
+            <div class="slider-card__footer">
+              <button class="slider-arrow" id="sliderBtn">
+                <div class="arrow-wrapper">
+                  <img
+                    src="public/rhomb-achieve.svg"
+                    alt="rhomb"
+                    class="rhomb-side left"
+                  />
+                  <span class="arrow-bg"></span>
+                  <img
+                    src="public/rhomb-achieve.svg"
+                    alt="rhomb"
+                    class="rhomb-side right"
+                  />
+                  <img
+                    src="public/arrow-right.svg"
+                    alt="arrow"
+                    class="arrow-icon"
+                  />
+                </div>
+              </button>
+              <a href="#" class="btn-more" id="cardLink">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="solutions-and-services">
+      <div class="container">
+        <h2>Решения и услуги</h2>
+        <div class="cards-solutions-and-services">
+          <article>
+            <h3>Компоненты ИТ-инфраструктуры</h3>
+            <ul>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Вычислительные
+                платформы и системы хранения данных
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Сети передачи данных,
+                мультимедийные и коммуникационные системы
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Инженерные системы
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Инфраструктурное
+                программное обеспечение
+              </li>
+            </ul>
+            <a href="/">Подробнее</a>
+          </article>
+          <article>
+            <h3>Комплексные решения</h3>
+            <ul>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Центры обработки данных
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Высокопроизводительные
+                вычислительные кластеры (НРС) и системы анализа данных
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Виртуализация рабочих
+                мест пользователей
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Системы резервного
+                копирования и аварийного восстановления данных
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Ситуационные центры
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Информационная
+                безопасность
+              </li>
+            </ul>
+            <a href="/">Подробнее</a>
+          </article>
+          <article>
+            <h3>Ключевые ИТ-услуги</h3>
+            <ul>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Повышение эффективности
+                использования ресурсов
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Переход к санкционной
+                независимости
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />«Цифровой полигон»
+              </li>
+              <li>
+                <img src="public/rhomb.svg" alt="ромб" />Поддержка
+                ИТ-инфраструктуры
+              </li>
+            </ul>
+            <a href="/">Подробнее</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="advantages">
+      <div class="advantages-sticky-wrapper">
+        <div class="container">
+          <div class="advantages-top">
+            <div class="advantages-title-row">
+              <h2><span>Преимущества</span> <span>работы с нами</span></h2>
+              <img src="public/red-line.svg" alt="линия" />
+            </div>
+            <p>
+              Опираясь на многолетний опыт и высокую экспертизу, мы ежедневно
+              решаем задачи разной сложности, обеспечивая клиентам полную
+              уверенность в результате
+            </p>
+          </div>
+
+          <div class="advantages__progress-container">
+            <div class="advantages__progress-bar"></div>
+          </div>
+
+          <div class="advantages__slider-viewport">
+            <div class="advantages__track">
+              <div class="adv">Построение всех уровней ИТ-инфраструктуры</div>
+              <div class="adv">Прямые отношения с производителями</div>
+              <div class="adv">Собственный центр экспертизы</div>
+              <div class="adv">
+                Отлаженные процессы и удобное взаимодействие
+              </div>
+              <div class="adv">
+                Эффективные инвестиции при внедрении типовых решений
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="news">
+      <div class="container">
+        <div class="news__header">
+          <h2>Новости</h2>
+          <div>
+            <img src="public/red-line.svg" alt="красная линия" />
+            <p>Знакомьтесь с проектами, партнерами и достижениями компании</p>
+          </div>
+          <a href="#">Все новости</a>
+        </div>
+
+        <div class="news__grid">
+          <article class="card-shatura">
+            <span>23.03.2026</span>
+            <h3>
+              <a href="#">
+                «Платформикс» модернизировал ядро сети мебельной компании
+                «Шатура»
+              </a>
+            </h3>
+            <p>
+              Заказчик получил современную, надежную и масштабируемую сетевую
+              инфраструктуру с гарантией отечественного производителя — компании
+              WowNet (ранее «Линки»).
+            </p>
+          </article>
+
+          <article class="card-alcea">
+            <h3>
+              <a href="#">
+                «Платформикс» разработал стратегию развития информационной
+                безопасности компании «Алцея»
+              </a>
+            </h3>
+            <p>
+              Проект обеспечил заказчику условия для выстраивания зрелой и
+              устойчивой системы информационной безопасности с учетом реальных
+              потребностей и рисков.
+            </p>
+            <span>04.03.2026</span>
+          </article>
+
+          <article class="card-delta">
+            <h3>
+              <a href="#">
+                «Платформикс» получил максимальный партнерский статус компании
+                «Дельта Компьютерс»
+              </a>
+            </h3>
+            <p>
+              Достижение статуса Premium Partner подтверждает глубокую
+              экспертизу интегратора.
+            </p>
+            <span>25.02.2026</span>
+          </article>
+
+          <article class="card-rapporto">
+            <h3>
+              <a href="#">
+                «Платформикс» внедрил систему контроля пользователей для
+                компании «Раппорто»
+              </a>
+            </h3>
+            <p>
+              Внедрение дало заказчику возможность централизованно управлять
+              доступом к критичным ИТ- и ИБ-активам компании.
+            </p>
+            <span>17.02.2026</span>
+          </article>
+
+          <article class="card-orion">
+            <h3>
+              <a href="#">
+                «Платформикс» стал платиновым партнером Orion soft
+              </a>
+            </h3>
+            <p>
+              Максимальный партнерский статус свидетельствует о высокой
+              квалификации команды «Платформикс» и готовности к реализации
+              масштабных проектов.
+            </p>
+            <span>12.03.2026</span>
+          </article>
+
+          <article class="card-astra">
+            <h3>
+              <a href="#">
+                «Платформикс» получил золотой партнерский статус «Группы Астра»
+                по направлению «Инфраструктура»
+              </a>
+            </h3>
+            <p>
+              Статус подтверждает экспертизу команды «Платформикс» в области
+              внедрения отечественных инфраструктурных решений.
+            </p>
+            <span>18.03.2026</span>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="partners">
+      <div class="container">
+        <div class="partners__header">
+          <h2>
+            Наши
+            <img src="public/red-line.svg" alt="" class="partners__line" />
+            <span>партнеры</span>
+          </h2>
+          <div class="partners__description">
+            <p>
+              Сотрудничаем со всеми ключевыми поставщиками ИТ-решений. Имеем
+              высокие партнерские статусы более 50 крупнейших ИТ-производителей
+            </p>
+          </div>
+        </div>
+
+        <div class="partners__wrapper">
+          <div class="partners__grid">
+            <img src="public/aquarius.svg" alt="Aquarius" />
+            <img src="public/arenadata.svg" alt="Arenadata" />
+            <img src="public/astra.svg" alt="Астра" />
+            <img src="public/axiom.svg" alt="Axiom JDK" />
+            <img src="public/avanpost.svg" alt="Аванпост" />
+            <img src="public/crosstech.svg" alt="Crosstech" />
+            <img src="public/communi-gate.svg" alt="CommuniGate" />
+
+            <img src="public/aquarius.svg" alt="Aquarius" />
+            <img src="public/arenadata.svg" alt="Arenadata" />
+            <img src="public/astra.svg" alt="Астра" />
+            <img src="public/axiom.svg" alt="Axiom JDK" />
+            <img src="public/avanpost.svg" alt="Аванпост" />
+            <img src="public/crosstech.svg" alt="Crosstech" />
+            <img src="public/communi-gate.svg" alt="CommuniGate" />
+
+            <img src="public/aquarius.svg" alt="Aquarius" />
+            <img src="public/arenadata.svg" alt="Arenadata" />
+            <img src="public/astra.svg" alt="Астра" />
+            <img src="public/axiom.svg" alt="Axiom JDK" />
+            <img src="public/avanpost.svg" alt="Аванпост" />
+            <img src="public/crosstech.svg" alt="Crosstech" />
+            <img src="public/communi-gate.svg" alt="CommuniGate" />
+          </div>
+        </div>
+
+        <a href="#" class="btn-partners">Все партнеры</a>
+      </div>
+    </section>
+    <section class="clients">
+      <div class="container">
+        <div class="clients__wrapper">
+          <div class="clients__info">
+            <div class="clients__title-row">
+              <h2>С нами</h2>
+              <img src="public/red-line.svg" alt="красная линия" />
+            </div>
+            <h2 class="clients__subtitle">работают</h2>
+            <p>
+              компании всех вертикалей рынка независимо от масштаба
+              ИТ-инфраструктуры
+            </p>
+          </div>
+
+          <div class="clients__logos">
+            <div class="clients__scroll-container">
+              <img src="public/a1systems.svg" alt="A1Systems" />
+              <img src="public/aeroexpress.svg" alt="Аэроэкспресс" />
+              <img src="public/amgen.svg" alt="Amgen" />
+              <img src="public/beko.svg" alt="Beko" />
+
+              <img src="public/a1systems.svg" alt="A1Systems" />
+              <img src="public/aeroexpress.svg" alt="Аэроэкспресс" />
+              <img src="public/amgen.svg" alt="Amgen" />
+              <img src="public/beko.svg" alt="Beko" />
+
+              <img src="public/a1systems.svg" alt="A1Systems" />
+              <img src="public/aeroexpress.svg" alt="Аэроэкспресс" />
+              <img src="public/amgen.svg" alt="Amgen" />
+              <img src="public/beko.svg" alt="Beko" />
+
+              <img src="public/a1systems.svg" alt="A1Systems" />
+              <img src="public/aeroexpress.svg" alt="Аэроэкспресс" />
+              <img src="public/amgen.svg" alt="Amgen" />
+              <img src="public/beko.svg" alt="Beko" />
+
+              <img src="public/a1systems.svg" alt="A1Systems" />
+              <img src="public/aeroexpress.svg" alt="Аэроэкспресс" />
+              <img src="public/amgen.svg" alt="Amgen" />
+              <img src="public/beko.svg" alt="Beko" />
+
+              <img src="public/a1systems.svg" alt="A1Systems" />
+              <img src="public/aeroexpress.svg" alt="Аэроэкспресс" />
+              <img src="public/amgen.svg" alt="Amgen" />
+              <img src="public/beko.svg" alt="Beko" />
+
+              <img src="public/a1systems.svg" alt="A1Systems" />
+              <img src="public/aeroexpress.svg" alt="Аэроэкспресс" />
+              <img src="public/amgen.svg" alt="Amgen" />
+              <img src="public/beko.svg" alt="Beko" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="achievements">
+      <div class="container">
+        <div class="achievements__wrapper">
+          <div class="achievements__title-block">
+            <h2>Что сделано</h2>
+            <div class="achievements__slider">
+              <div class="achievements__arrow achievements__arrow--left">
+                <img src="public/arrow-left.svg" alt="назад" />
+              </div>
+              <div class="achievements__select-wrapper">
+                <div class="border-layer"></div>
+                <div class="achievements__select">
+                  <span>в январе</span>
+                </div>
+                <div class="achievements__rhomb-btn">
+                  <img
+                    src="public/rhomb-achieve.svg"
+                    class="rhomb-right"
+                    alt=""
+                  />
+                  <img
+                    src="public/arrow-right.svg"
+                    class="arrow-icon"
+                    alt="вперед"
+                  />
+                </div>
+              </div>
+              <div class="achievements__arrow achievements__arrow--right">
+                <img src="public/arrow-right.svg" alt="вперед" />
+              </div>
+            </div>
+          </div>
+
+          <div class="achievements__stats">
+            <div class="stat-item stat-item-1">
+              <p>Обслужено заказчиков</p>
+              <span>41</span>
+              <div class="stat-item__line"></div>
+            </div>
+
+            <div class="stat-item stat-item-2">
+              <p>Количество инженерных человеко-часов</p>
+              <span>15 633</span>
+
+              <div class="stat-item__line"></div>
+            </div>
+
+            <div class="stat-item stat-item-3">
+              <p>Количество производителей поставленного оборудования</p>
+              <span>52</span>
+              <div class="stat-item__line"></div>
+            </div>
+
+            <div class="stat-item stat-item-4">
+              <p>Количество субъектов РФ, охваченных деловой активностью</p>
+              <span>6</span>
+              <div class="stat-item__line"></div>
+            </div>
+
+            <div class="stat-item stat-item-5">
+              <p>Количество поставленных систем</p>
+              <span>2 755</span>
+              <div class="stat-item__line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback">
+      <div class="container">
+        <div class="feedback__wrapper">
+          <div class="feedback__info">
+            <h2>Оставить заявку</h2>
+            <p>Расскажите о вашей задаче, и мы предложим решение</p>
+          </div>
+
+          <form class="feedback__form">
+            <div class="form-group">
+              <label>ФИО<span>*</span></label>
+              <input type="text" placeholder="Иванов Иван Иванович" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Компания<span>*</span></label>
+                <input type="text" placeholder='ООО "Компания"' />
+              </div>
+              <div class="form-group">
+                <label>Должность<span>*</span></label>
+                <input type="text" placeholder="Менеджер" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Телефон<span>*</span></label>
+                <input type="tel" placeholder="+7 (911) 000-00-00" />
+              </div>
+              <div class="form-group">
+                <label>Адрес электронной почты<span>*</span></label>
+                <input type="email" placeholder="ivanov@mail.ru" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Какое решение Вас интересует?<span>*</span></label>
+                <select>
+                  <option value="">Выберите решение</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Прикрепить файл</label>
+                <div class="file-upload">
+                  <span>Прикрепите файл</span>
+                  <img src="public/download-file.svg" alt="загрузить" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Комментарий</label>
+              <textarea placeholder="I..."></textarea>
+            </div>
+
+            <div class="form-bottom">
+              <label class="checkbox-label">
+                <input type="checkbox" />
+                <span
+                  >*Согласен с условиями использования моих персональных
+                  данных</span
+                >
+              </label>
+
+              <div class="form-actions">
+                <div class="captcha">
+                  <input type="checkbox" />
+                  <span>Я человек</span>
+                </div>
+                <button type="submit">Отправить заявку</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand-wrapper">
+            <div class="footer__brand">
+              <img src="./public/platformix.svg" alt="Платформикс" />
+            </div>
+          </div>
+
+          <nav class="footer__nav">
+            <div class="footer__column">
+              <div class="footer__column-header">
+                <h3>О компании</h3>
+                <img
+                  src="public/tick_down.svg"
+                  alt=""
+                  class="footer__mobile-arrow"
+                />
+              </div>
+              <ul>
+                <li><a href="#">Партнеры</a></li>
+                <li><a href="#">История</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <div class="footer__column-header">
+                <h3>Решения и услуги</h3>
+                <img
+                  src="public/tick_down.svg"
+                  alt=""
+                  class="footer__mobile-arrow"
+                />
+              </div>
+              <ul>
+                <li><a href="#">Компоненты ИТ-инфраструктуры</a></li>
+                <li><a href="#">Комплексные решения</a></li>
+                <li><a href="#">ИТ-услуги</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <div class="footer__column-header">
+                <h3>Медиацентр</h3>
+                <img
+                  src="public/chevron-down.svg"
+                  alt=""
+                  class="footer__mobile-arrow"
+                />
+              </div>
+              <ul>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Истории успеха</a></li>
+                <li><a href="#">Медиакит</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <div class="footer__column-header">
+                <h3>Карьера</h3>
+                <img
+                  src="public/chevron-down.svg"
+                  alt=""
+                  class="footer__mobile-arrow"
+                />
+              </div>
+              <ul>
+                <li><a href="#">Вакансии</a></li>
+                <li><a href="#">Стажировка</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column footer__contacts-block">
+              <div class="footer__column-header">
+                <h3>Контакты</h3>
+              </div>
+              <div class="footer__contacts-content">
+                <div class="footer__contact-info">
+                  <a href="mailto:info@platformix.ru">info@platformix.ru</a>
+                  <a href="tel:+74959678050">+7 (495) 967-80-50</a>
+                </div>
+                <address>
+                  125167, г. Москва, Ленинградский пр-т, д. 37А, корп. 4
+                </address>
+              </div>
+            </div>
+          </nav>
+
+          <div class="footer__socials">
+            <a href="#"><img src="public/vk.svg" alt="Вконтакте" /></a>
+            <a href="#"><img src="public/hh.svg" alt="HeadHunter" /></a>
+          </div>
+        </div>
+
+        <div class="footer__bottom-grid">
+          <div class="footer__legal">
+            <span>© ООО «Платформикс», 2006–2026</span>
+            <a href="#">Корпоративная информация</a>
+            <a href="#">Реквизиты</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const footerSpan = document.querySelector(".footer__legal span");
+      if (footerSpan) {
+        const currentYear = new Date().getFullYear();
+        footerSpan.innerText = `© ООО «Платформикс», 2006–${currentYear}`;
+      }
+    </script>
+  </body>
+</html>
