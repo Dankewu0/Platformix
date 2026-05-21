@@ -1,5 +1,5 @@
 .achievements {
-  padding: 120px 0;
+  padding: clamp(70px, 8vw, 120px) 0;
   background: linear-gradient(180deg, #00101D 0%, rgba(0, 16, 29, 0) 100%), url("../public/main-cubes.png") no-repeat center;
   background-size: cover;
   color: #ffffff;
@@ -30,7 +30,7 @@
   .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 56px;
+    padding: 0 clamp(16px, 4vw, 56px);
     width: 100%;
     position: relative;
     z-index: 2;
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 100px;
+    gap: clamp(28px, 7vw, 100px);
   }
 
   .achievements__title-block {
@@ -52,7 +52,7 @@
       font-family: "28ExtraExpandedRegular", sans-serif;
       font-size: 56px;
       line-height: 1.1;
-      margin: 0 0 30px 0;
+      margin: 0 0 clamp(16px, 2vw, 30px) 0;
     }
   }
 
@@ -63,8 +63,8 @@
   }
 
   .achievements__select-wrapper {
-    width: 421px;
-    height: 86px;
+    width: clamp(260px, 30vw, 421px);
+    height: clamp(64px, 6vw, 86px);
     padding: 0 22px;
     display: inline-flex;
     align-items: center;
@@ -341,7 +341,13 @@
     }
 
     .achievements__wrapper {
+      flex-wrap: wrap;
       gap: 50px;
+    }
+
+    .achievements__title-block {
+      width: 100%;
+      position: static;
     }
 
     .achievements__slider {
@@ -396,12 +402,13 @@
     }
 
     .achievements__stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 40px;
-      row-gap: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 40px;
+      width: 100%;
 
       .stat-item {
+        width: calc(50% - 20px);
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -498,12 +505,13 @@
     }
 
     .achievements__stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 20px;
       width: 100%;
 
       .stat-item {
+        width: calc(50% - 10px);
         margin-top: 0;
         padding-bottom: 60px;
 

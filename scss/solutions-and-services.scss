@@ -1,6 +1,6 @@
 .solutions-and-services {
   display: flex;
-  min-height: 661px;
+  min-height: clamp(520px, 55vw, 661px);
   position: relative;
   overflow: hidden;
   background:
@@ -26,7 +26,7 @@
     align-items: flex-start;
     position: relative;
     z-index: 1;
-    padding: 60px 20px;
+    padding: clamp(36px, 5vw, 60px) clamp(12px, 2vw, 20px);
     box-sizing: border-box;
     overflow: visible;
   }
@@ -34,21 +34,21 @@
   h2 {
     font-family: "28ExpandedRegular", sans-serif;
     max-width: 288px;
-    font-size: 56px;
-    margin-right: 74px;
+    font-size: clamp(32px, 4vw, 56px);
+    margin-right: clamp(0px, 5vw, 74px);
     position: absolute;
-    left: 240px;
-    top: 60px;
+    left: clamp(0px, 16vw, 240px);
+    top: clamp(36px, 5vw, 60px);
     flex-shrink: 0;
   }
 
   .cards-solutions-and-services {
     display: flex;
-    gap: 24px;
+    gap: clamp(12px, 2vw, 24px);
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-top: 50px;
-    margin-left: 362px;
+    margin-top: clamp(24px, 4vw, 50px);
+    margin-left: clamp(0px, 25vw, 362px);
 
     article {
       box-sizing: border-box;
@@ -107,6 +107,8 @@
         list-style: none;
         padding: 0;
         margin: 0;
+        width: 100%;
+        flex: 1;
 
         li {
           font-family: "PF Encore Sans Pro", sans-serif;
@@ -117,7 +119,8 @@
           margin-bottom: 6px;
           font-size: 12pt;
           line-height: 110%;
-          max-width: 230px;
+          max-width: 100%;
+          width: 100%;
           transition: font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
           img {
@@ -195,7 +198,7 @@
         }
 
         ul li {
-          font-size: 13pt;
+          font-size: 12pt;
           max-width: 100%;
 
           img {
@@ -266,7 +269,7 @@
           }
 
           ul li {
-            font-size: 16px;
+            font-size: 12pt;
 
             img {
               width: 7.08px;
@@ -291,7 +294,7 @@
           }
 
           ul li {
-            font-size: 16px;
+            font-size: 12pt;
 
             img {
               width: 7.08px;

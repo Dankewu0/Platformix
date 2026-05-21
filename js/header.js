@@ -8,6 +8,7 @@ function updateGap(item) {
   const existingCorners = headerContainer.querySelectorAll(".corner-js");
   existingCorners.forEach((c) => c.remove());
 
+  const isScrolled = pageHeader && pageHeader.classList.contains("header--scrolled");
   if (item && item.classList.contains("active")) {
     const rect = item.getBoundingClientRect();
     const containerRect = headerContainer.getBoundingClientRect();
@@ -18,49 +19,51 @@ function updateGap(item) {
     headerContainer.style.setProperty("--gap-width", `${width}px`);
     headerContainer.classList.add("has-active");
 
-    const leftCorner = document.createElement("div");
-    leftCorner.className = "corner-js";
-    leftCorner.style.cssText = `
-      position: absolute;
-      bottom: -9px;
-      left: ${left - 10}px;
-      width: 10px;
-      height: 10px;
-      pointer-events: none;
-      overflow: hidden;
-      transform: scaleX(-1) rotate(180deg) scale(0.98);
-      transform-origin: center;
-    `;
-    leftCorner.innerHTML = `<div style="
-      width: 10px;
-      height: 10px;
-      border-radius: 0 0 10px 0;
-      border-right: 2px solid #63718f;
-      border-bottom: 2px solid #63718f;
-    "></div>`;
-    headerContainer.appendChild(leftCorner);
+    if (isScrolled) {
+      const leftCorner = document.createElement("div");
+      leftCorner.className = "corner-js";
+      leftCorner.style.cssText = `
+        position: absolute;
+        bottom: -9px;
+        left: ${left - 10}px;
+        width: 10px;
+        height: 10px;
+        pointer-events: none;
+        overflow: hidden;
+        transform: scaleX(-1) rotate(180deg) scale(0.98);
+        transform-origin: center;
+      `;
+      leftCorner.innerHTML = `<div style="
+        width: 10px;
+        height: 10px;
+        border-radius: 0 0 10px 0;
+        border-right: 2px solid #63718f;
+        border-bottom: 2px solid #63718f;
+      "></div>`;
+      headerContainer.appendChild(leftCorner);
 
-    const rightCorner = document.createElement("div");
-    rightCorner.className = "corner-js";
-    rightCorner.style.cssText = `
-      position: absolute;
-      bottom: -9px;
-      left: ${left + width}px;
-      width: 10px;
-      height: 10px;
-      pointer-events: none;
-      overflow: hidden;
-      transform: rotate(180deg) scale(0.98);
-      transform-origin: center;
-    `;
-    rightCorner.innerHTML = `<div style="
-      width: 10px;
-      height: 10px;
-      border-radius: 0 0 10px 0;
-      border-right: 2px solid #63718f;
-      border-bottom: 2px solid #63718f;
-    "></div>`;
-    headerContainer.appendChild(rightCorner);
+      const rightCorner = document.createElement("div");
+      rightCorner.className = "corner-js";
+      rightCorner.style.cssText = `
+        position: absolute;
+        bottom: -9px;
+        left: ${left + width}px;
+        width: 10px;
+        height: 10px;
+        pointer-events: none;
+        overflow: hidden;
+        transform: rotate(180deg) scale(0.98);
+        transform-origin: center;
+      `;
+      rightCorner.innerHTML = `<div style="
+        width: 10px;
+        height: 10px;
+        border-radius: 0 0 10px 0;
+        border-right: 2px solid #63718f;
+        border-bottom: 2px solid #63718f;
+      "></div>`;
+      headerContainer.appendChild(rightCorner);
+    }
   } else {
     headerContainer.style.removeProperty("--gap-left");
     headerContainer.style.removeProperty("--gap-width");
@@ -143,6 +146,10 @@ window.addEventListener("resize", () => {
 function updateHeaderScrollState() {
   if (!pageHeader) return;
   pageHeader.classList.toggle("header--scrolled", window.scrollY > 10);
+  const activeItem = document.querySelector(".menu-item.active");
+  if (activeItem) {
+    updateGap(activeItem);
+  }
 }
 
 window.addEventListener("scroll", updateHeaderScrollState, { passive: true });

@@ -1,5 +1,5 @@
 .partners {
-  padding: 100px 0;
+  padding: clamp(40px, 7vw, 100px) 0;
   background:
     radial-gradient(
       ellipse 1330px 378px at center,
@@ -18,7 +18,7 @@
   .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 56px;
+    padding: 0 clamp(16px, 4vw, 56px);
     display: flex;
     flex-direction: column;
   }
@@ -27,7 +27,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 80px;
+    margin-bottom: clamp(28px, 6vw, 80px);
     gap: 0;
 
     h2 {
@@ -42,7 +42,7 @@
       flex-shrink: 0;
 
       .partners__line {
-        width: 240px;
+        width: clamp(110px, 16vw, 240px);
         height: auto;
         margin-left: 25px;
         flex-shrink: 0;
@@ -62,11 +62,11 @@
       display: flex;
       align-items: flex-start;
       max-width: 650px;
-      margin-top: 15px;
-      margin-left: -350px;
+      margin-top: clamp(0px, 1vw, 15px);
+      margin-left: clamp(-350px, -24vw, 0px);
 
       p {
-        font-family: "BeauSans-Light", sans-serif;
+        font-family: "PF Encore Sans Pro", sans-serif;
         font-size: 18px;
         line-height: 1.4;
         color: #0d1b3e;

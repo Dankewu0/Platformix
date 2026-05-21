@@ -1,21 +1,23 @@
 footer {
   background: linear-gradient(70.52deg, #0e1428 0%, #1b2549 100%);
-  padding: 60px 0 40px;
+  padding: clamp(40px, 5vw, 60px) 0 clamp(24px, 3.5vw, 40px);
   color: #ffffff;
   position: relative;
   border-top: none;
 
   .container {
-    max-width: 1440px;
+    max-width: clamp(320px, 96vw, 1440px);
+    width: 100%;
+    flex-wrap: wrap;
     margin: 0 auto;
-    padding: 0 56px;
+    padding: 0 clamp(16px, 4vw, 56px);
   }
 
   .footer__top {
     display: flex;
     align-items: flex-start;
-    gap: 60px;
-    margin-bottom: 80px;
+    gap: clamp(24px, 4vw, 60px);
+    margin-bottom: clamp(30px, 6vw, 80px);
     flex-wrap: nowrap;
   }
 
@@ -29,7 +31,7 @@ footer {
   .footer__brand {
     flex-shrink: 0;
     img {
-      height: 24px;
+      height: clamp(18px, 2vw, 24px);
       width: auto;
     }
   }
@@ -38,9 +40,10 @@ footer {
     display: flex;
     justify-content: space-between;
     flex: 1 1 auto;
+    flex-wrap: wrap;
     min-width: 0;
-    padding-right: 40px;
-    margin-top: -15px;
+    padding-right: clamp(0px, 2.8vw, 40px);
+    margin-top: clamp(-15px, -1vw, 0px);
   }
 
   .footer__column {
@@ -56,9 +59,9 @@ footer {
     h3 {
       font-family: "18ExpandedSemiBold", sans-serif;
       font-weight: 600;
-      font-size: 14px;
+      font-size: clamp(12px, 0.95vw, 14px);
       line-height: 110%;
-      margin-bottom: 25px;
+      margin-bottom: clamp(14px, 2vw, 25px);
       color: #ffffff;
     }
 
@@ -68,7 +71,7 @@ footer {
       margin: 0;
 
       li {
-        margin-bottom: 12px;
+        margin-bottom: clamp(8px, 1vw, 12px);
 
         a {
           text-decoration: none;
@@ -76,7 +79,7 @@ footer {
           opacity: 0.7;
           font-family: "PF Encore Sans Pro", sans-serif;
           font-weight: 300;
-          font-size: 14px;
+          font-size: clamp(12px, 0.95vw, 14px);
           line-height: 110%;
           transition: opacity 0.2s;
 
@@ -90,16 +93,17 @@ footer {
 
   .footer__socials {
     display: flex;
-    gap: 12px;
-    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: clamp(8px, 1vw, 12px);
+    flex-shrink: 1;
     margin-left: auto;
 
     a {
       display: flex;
       img {
-        width: 32px;
-        height: 32px;
-        border-radius: 6px;
+        width: clamp(24px, 2.3vw, 32px);
+        height: clamp(24px, 2.3vw, 32px);
+        border-radius: clamp(4px, 0.5vw, 6px);
       }
     }
   }
@@ -112,11 +116,11 @@ footer {
   .footer__contacts-block {
     display: flex;
     flex-direction: column;
-    min-width: 280px;
+    min-width: clamp(220px, 22vw, 280px);
 
     .footer__contacts-content {
       display: flex;
-      gap: 30px;
+      gap: clamp(16px, 2vw, 30px);
 
       .footer__contact-info {
         display: flex;
@@ -129,7 +133,7 @@ footer {
           color: #ffffff;
           font-family: "PF Encore Sans Pro", sans-serif;
           font-weight: 300;
-          font-size: 14px;
+          font-size: clamp(12px, 0.95vw, 14px);
           opacity: 0.7;
           transition: opacity 0.2s;
 
@@ -143,10 +147,10 @@ footer {
         font-style: normal;
         font-family: "PF Encore Sans Pro", sans-serif;
         font-weight: 300;
-        font-size: 14px;
+        font-size: clamp(12px, 0.95vw, 14px);
         line-height: 1.4;
         opacity: 0.7;
-        max-width: 180px;
+        max-width: clamp(140px, 14vw, 180px);
       }
     }
   }
@@ -154,10 +158,10 @@ footer {
   .footer__legal {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: clamp(18px, 2.8vw, 40px);
     font-family: "PF Encore Sans Pro", sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: clamp(12px, 0.95vw, 14px);
     line-height: 110%;
 
     span {

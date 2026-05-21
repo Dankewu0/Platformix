@@ -1,5 +1,5 @@
 .feedback {
-  padding: 120px 0;
+  padding: clamp(60px, 8vw, 120px) 0;
   background: linear-gradient(70.52deg, #0e1428 0%, #1b2549 100%);
   position: relative;
   overflow: hidden;
@@ -24,7 +24,7 @@
 
   .container {
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 clamp(16px, 4.2vw, 60px);
     position: relative;
     z-index: 1;
   }
@@ -33,20 +33,20 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 100px;
+    gap: clamp(28px, 7vw, 100px);
   }
 
   .feedback__info {
     max-width: 320px;
     flex-shrink: 0;
-    margin-top: 40px;
+    margin-top: clamp(0px, 3vw, 40px);
 
     h2 {
       font-family: "28ExtraExpandedRegular", sans-serif;
       font-size: 56px;
       line-height: 0.9;
       color: #ffffff;
-      margin: 0 50px 50px 0;
+      margin: 0 clamp(0px, 3.5vw, 50px) clamp(20px, 3.5vw, 50px) 0;
     }
 
     p {
@@ -63,7 +63,7 @@
   .feedback__form {
     background: #f4f6f9;
     border-radius: 40px;
-    padding: 60px 80px;
+    padding: clamp(28px, 4.2vw, 60px) clamp(20px, 5.5vw, 80px);
     flex-grow: 1;
     width: 1008px;
 
@@ -246,6 +246,55 @@
 
         .btn-news {
           width: 285px;
+          height: 42px;
+          border: none;
+          transform: none;
+          background: linear-gradient(180deg, #e4200e -3.57%, #e44e0e 100%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          cursor: pointer;
+          color: #ffffff;
+          text-decoration: none;
+          font-family: "28ExpandedRegular", sans-serif;
+          font-size: 16px;
+          line-height: 1;
+          position: relative;
+          z-index: 1;
+          transition:
+            background 1.2s ease-in-out,
+            box-shadow 0.4s ease-out;
+
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            padding: 1px;
+            background: linear-gradient(
+              0deg,
+              rgba(255, 113, 100, 0) 0%,
+              #ff7164 53.85%,
+              rgba(255, 113, 100, 0) 99.04%
+            );
+            -webkit-mask:
+              linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: background 1.2s ease-in-out;
+          }
+
+          &:hover {
+            background: linear-gradient(180deg, #e4200e -3.57%, #ff7a62 100%);
+            box-shadow: 0 0 20px 0 rgba(228, 32, 14, 0.5);
+
+            &::before {
+              background: linear-gradient(0deg, #ff9706 0%, #e4200e 100%);
+            }
+          }
         }
       }
     }

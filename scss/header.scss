@@ -15,11 +15,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1362px;
-    height: 44px;
+    max-width: clamp(320px, 94vw, 1362px);
+    height: clamp(36px, 4.2vw, 44px);
     width: 100%;
-    padding: 0 2vw;
-    border-radius: 10px;
+    padding: 0 clamp(8px, 2vw, 28px);
+    border-radius: clamp(8px, 1vw, 10px);
     color: white;
     box-sizing: border-box;
 
@@ -66,19 +66,20 @@ header {
       pointer-events: none;
     }
     .platformix {
-      width: 96px;
-      height: 20px;
+      width: clamp(72px, 7.5vw, 96px);
+      height: clamp(15px, 1.6vw, 20px);
+      margin-right: clamp(8px, 1.8vw, 28px);
     }
     img {
-      height: clamp(6px, 1.4vw, 20px);
+      height: clamp(5px, 1.15vw, 20px);
       margin-top: 2px;
       width: auto;
     }
     .menu {
       display: flex;
       align-items: center;
-      gap: clamp(20px, 3vw, 40px);
-      margin: 0 clamp(20px, 4vw, 54px);
+      gap: clamp(10px, 2.1vw, 40px);
+      margin: 0 clamp(8px, 2.5vw, 54px);
       height: 100%;
       > div {
         position: relative;
@@ -96,14 +97,14 @@ header {
           display: flex;
           align-items: center;
           gap: 6px;
-          font-size: clamp(10px, 1.1vw, 15px);
+          font-size: clamp(8px, 0.95vw, 15px);
           cursor: pointer;
           height: 100%;
           font-family: "18ExpandedRegular", sans-serif;
 
           img {
-            width: clamp(6px, 1vw, 14px);
-            height: clamp(6px, 0.6vw, 8px);
+            width: clamp(5px, 0.8vw, 14px);
+            height: clamp(5px, 0.5vw, 8px);
           }
         }
 
@@ -121,19 +122,19 @@ header {
 
           padding: 0;
 
-          border-radius: 0 0 10px 10px;
+          border-radius: 0 0 clamp(8px, 1vw, 10px) clamp(8px, 1vw, 10px);
 
-          background: rgba(234, 235, 237, 0.1);
+          background: transparent;
           backdrop-filter: blur(25px);
 
-          border-left: 1px solid rgba(177, 202, 250, 0.35);
-          border-right: 1px solid rgba(177, 202, 250, 0.35);
+          border-left: clamp(0.5px, 0.08vw, 1px) solid transparent;
+          border-right: clamp(0.5px, 0.08vw, 1px) solid transparent;
           border-bottom: none;
           border-top: none;
 
           opacity: 0;
           visibility: hidden;
-          transition: 0.2s;
+          transition: opacity 0.25s ease, visibility 0s linear 0.25s;
         }
 
         a {
@@ -152,14 +153,16 @@ header {
         &.active div {
           opacity: 1;
           visibility: visible;
+          transition: opacity 0.25s ease, visibility 0s linear 0s;
         }
       }
     }
 
     .phone {
-      font-size: clamp(8px, 1.1vw, 15px);
+      font-size: clamp(8px, 0.95vw, 15px);
       white-space: nowrap;
       font-family: "18ExpandedRegular", sans-serif;
+      margin-left: clamp(8px, 1.8vw, 28px);
     }
 
     .phone-btn {
@@ -355,7 +358,7 @@ header {
         color: white;
         font-size: 24px;
         font-family: "18ExpandedRegular", sans-serif;
-        background: rgba(234, 235, 237, 0.1);
+        background: rgba(166, 193, 245, 0.18);
         backdrop-filter: blur(25px);
         border: 1px solid transparent;
         border-radius: 10px;
@@ -387,21 +390,31 @@ header {
   header .container {
     background: transparent;
     backdrop-filter: none;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
+    border-left: clamp(0.5px, 0.08vw, 1px) solid transparent;
+    border-right: clamp(0.5px, 0.08vw, 1px) solid transparent;
     transition: background 0.25s ease, backdrop-filter 0.25s ease, border-color 0.25s ease;
   }
 
   header.header--scrolled .container {
-    background: rgba(234, 235, 237, 0.1);
+    background: rgba(166, 193, 245, 0.18);
     backdrop-filter: blur(25px);
-    border-left: 1px solid rgba(177, 202, 250, 0.35);
-    border-right: 1px solid rgba(177, 202, 250, 0.35);
+    border-left: clamp(0.5px, 0.08vw, 1px) solid #4a5670;
+    border-right: clamp(0.5px, 0.08vw, 1px) solid #4a5670;
 
     &::before,
     &::after {
       opacity: 1;
     }
+  }
+
+  header.header--scrolled .menu > div.active div {
+    transition: opacity 0.25s ease 0.25s, visibility 0s linear 0.25s;
+  }
+
+  header.header--scrolled .menu > div div {
+    background: rgba(166, 193, 245, 0.18);
+    border-left: clamp(0.5px, 0.08vw, 1px) solid rgba(177, 202, 250, 0.35);
+    border-right: clamp(0.5px, 0.08vw, 1px) solid rgba(177, 202, 250, 0.35);
   }
 }
 
@@ -453,7 +466,7 @@ header {
     }
 
     .menu-group.open .submenu {
-      background: rgba(234, 235, 237, 0.1);
+      background: rgba(166, 193, 245, 0.18);
       backdrop-filter: blur(25px);
     }
 
@@ -466,7 +479,7 @@ header {
     }
 
     .menu-group .menu-group-btn {
-      background: rgba(234, 235, 237, 0.1);
+      background: rgba(166, 193, 245, 0.18);
       backdrop-filter: blur(25px);
       border-radius: 10px;
       margin-left: 15px;

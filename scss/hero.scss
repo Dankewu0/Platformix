@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 110px 0 60px;
+  padding: clamp(90px, 9vw, 110px) 0 clamp(40px, 5vw, 60px);
   overflow: hidden;
 
   &::after {
@@ -34,12 +34,12 @@
   .container {
     display: flex;
     justify-content: center;
-    gap: 227px;
+    gap: clamp(24px, 12vw, 227px);
     align-items: center;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 2.2vw, 20px);
     position: relative;
     z-index: 2;
   }
@@ -59,8 +59,8 @@
 
       span {
         display: block;
-        margin-left: 203px;
-        margin-bottom: 40px;
+        margin-left: clamp(0px, 10vw, 203px);
+        margin-bottom: clamp(20px, 3vw, 40px);
       }
     }
 
@@ -73,7 +73,7 @@
       p {
         font-family: "PF Encore Sans Pro", sans-serif;
         font-weight: 300;
-        font-size: 16pt;
+        font-size: clamp(12pt, 1.1vw, 16pt);
         line-height: 110%;
         opacity: 0.8;
         margin: 0;
@@ -257,16 +257,12 @@
 
               &.left {
                 left: 5px;
-                background: #afb5c5;
                 border-radius: 5px;
-                transform: rotate(-45deg);
               }
 
               &.right {
                 right: 2px;
-                background: #afb5c5;
                 border-radius: 5px;
-                transform: rotate(-45deg);
                 z-index: 1;
               }
             }
@@ -315,7 +311,11 @@
           }
 
           &:hover {
-            background: linear-gradient(176.75deg, #17203f 2.81%, #5e77cd 97.46%);
+            background: linear-gradient(
+              176.75deg,
+              #17203f 2.81%,
+              #5e77cd 97.46%
+            );
             box-shadow:
               0 20px 25px -5px rgba(0, 0, 0, 0.1),
               0 8px 10px -6px rgba(0, 0, 0, 0.1);

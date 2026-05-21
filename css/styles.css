@@ -406,11 +406,11 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1362px;
-  height: 44px;
+  max-width: clamp(320px, 94vw, 1362px);
+  height: clamp(36px, 4.2vw, 44px);
   width: 100%;
-  padding: 0 2vw;
-  border-radius: 10px;
+  padding: 0 clamp(8px, 2vw, 28px);
+  border-radius: clamp(8px, 1vw, 10px);
   color: white;
   box-sizing: border-box;
 }
@@ -455,19 +455,20 @@ header .container .border-sides {
   pointer-events: none;
 }
 header .container .platformix {
-  width: 96px;
-  height: 20px;
+  width: clamp(72px, 7.5vw, 96px);
+  height: clamp(15px, 1.6vw, 20px);
+  margin-right: clamp(8px, 1.8vw, 28px);
 }
 header .container img {
-  height: clamp(6px, 1.4vw, 20px);
+  height: clamp(5px, 1.15vw, 20px);
   margin-top: 2px;
   width: auto;
 }
 header .container .menu {
   display: flex;
   align-items: center;
-  gap: clamp(20px, 3vw, 40px);
-  margin: 0 clamp(20px, 4vw, 54px);
+  gap: clamp(10px, 2.1vw, 40px);
+  margin: 0 clamp(8px, 2.5vw, 54px);
   height: 100%;
 }
 header .container .menu > div {
@@ -486,14 +487,14 @@ header .container .menu > div button {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: clamp(10px, 1.1vw, 15px);
+  font-size: clamp(8px, 0.95vw, 15px);
   cursor: pointer;
   height: 100%;
   font-family: "18ExpandedRegular", sans-serif;
 }
 header .container .menu > div button img {
-  width: clamp(6px, 1vw, 14px);
-  height: clamp(6px, 0.6vw, 8px);
+  width: clamp(5px, 0.8vw, 14px);
+  height: clamp(5px, 0.5vw, 8px);
 }
 header .container .menu > div div {
   position: absolute;
@@ -505,16 +506,16 @@ header .container .menu > div div {
   flex-direction: column;
   gap: 0;
   padding: 0;
-  border-radius: 0 0 10px 10px;
-  background: rgba(234, 235, 237, 0.1);
+  border-radius: 0 0 clamp(8px, 1vw, 10px) clamp(8px, 1vw, 10px);
+  background: transparent;
   backdrop-filter: blur(25px);
-  border-left: 1px solid rgba(177, 202, 250, 0.35);
-  border-right: 1px solid rgba(177, 202, 250, 0.35);
+  border-left: clamp(0.5px, 0.08vw, 1px) solid transparent;
+  border-right: clamp(0.5px, 0.08vw, 1px) solid transparent;
   border-bottom: none;
   border-top: none;
   opacity: 0;
   visibility: hidden;
-  transition: 0.2s;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
 }
 header .container .menu > div a {
   color: white;
@@ -531,11 +532,13 @@ header .container .menu > div a {
 header .container .menu > div.active div {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.25s ease, visibility 0s linear 0s;
 }
 header .container .phone {
-  font-size: clamp(8px, 1.1vw, 15px);
+  font-size: clamp(8px, 0.95vw, 15px);
   white-space: nowrap;
   font-family: "18ExpandedRegular", sans-serif;
+  margin-left: clamp(8px, 1.8vw, 28px);
 }
 header .container .phone-btn {
   display: none;
@@ -717,7 +720,7 @@ header .mobile-menu .menu-group .company-menu-group-btn {
   color: white;
   font-size: 24px;
   font-family: "18ExpandedRegular", sans-serif;
-  background: rgba(234, 235, 237, 0.1);
+  background: rgba(166, 193, 245, 0.18);
   backdrop-filter: blur(25px);
   border: 1px solid transparent;
   border-radius: 10px;
@@ -746,18 +749,26 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   header .container {
     background: transparent;
     backdrop-filter: none;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
+    border-left: clamp(0.5px, 0.08vw, 1px) solid transparent;
+    border-right: clamp(0.5px, 0.08vw, 1px) solid transparent;
     transition: background 0.25s ease, backdrop-filter 0.25s ease, border-color 0.25s ease;
   }
   header.header--scrolled .container {
-    background: rgba(234, 235, 237, 0.1);
+    background: rgba(166, 193, 245, 0.18);
     backdrop-filter: blur(25px);
-    border-left: 1px solid rgba(177, 202, 250, 0.35);
-    border-right: 1px solid rgba(177, 202, 250, 0.35);
+    border-left: clamp(0.5px, 0.08vw, 1px) solid #4a5670;
+    border-right: clamp(0.5px, 0.08vw, 1px) solid #4a5670;
   }
   header.header--scrolled .container::before, header.header--scrolled .container::after {
     opacity: 1;
+  }
+  header.header--scrolled .menu > div.active div {
+    transition: opacity 0.25s ease 0.25s, visibility 0s linear 0.25s;
+  }
+  header.header--scrolled .menu > div div {
+    background: rgba(166, 193, 245, 0.18);
+    border-left: clamp(0.5px, 0.08vw, 1px) solid rgba(177, 202, 250, 0.35);
+    border-right: clamp(0.5px, 0.08vw, 1px) solid rgba(177, 202, 250, 0.35);
   }
 }
 @media (max-width: 1024px) {
@@ -799,7 +810,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     left: -9px;
   }
   header .mobile-menu .menu-group.open .submenu {
-    background: rgba(234, 235, 237, 0.1);
+    background: rgba(166, 193, 245, 0.18);
     backdrop-filter: blur(25px);
   }
   header .mobile-menu .company-menu-group-btn {
@@ -810,7 +821,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     border-bottom: none;
   }
   header .mobile-menu .menu-group .menu-group-btn {
-    background: rgba(234, 235, 237, 0.1);
+    background: rgba(166, 193, 245, 0.18);
     backdrop-filter: blur(25px);
     border-radius: 10px;
     margin-left: 15px;
@@ -852,7 +863,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 110px 0 60px;
+  padding: clamp(90px, 9vw, 110px) 0 clamp(40px, 5vw, 60px);
   overflow: hidden;
 }
 .hero::after {
@@ -872,12 +883,12 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .hero .container {
   display: flex;
   justify-content: center;
-  gap: 227px;
+  gap: clamp(24px, 12vw, 227px);
   align-items: center;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(16px, 2.2vw, 20px);
   position: relative;
   z-index: 2;
 }
@@ -896,8 +907,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .hero .hero__content h1 span {
   display: block;
-  margin-left: 203px;
-  margin-bottom: 40px;
+  margin-left: clamp(0px, 10vw, 203px);
+  margin-bottom: clamp(20px, 3vw, 40px);
 }
 .hero .hero__content .hero__description {
   display: flex;
@@ -908,7 +919,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .hero .hero__content .hero__description p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 16pt;
+  font-size: clamp(12pt, 1.1vw, 16pt);
   line-height: 110%;
   opacity: 0.8;
   margin: 0;
@@ -1064,15 +1075,11 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .hero .hero__slider .slider-card__footer .slider-arrow .arrow-wrapper .rhomb-side.left {
   left: 5px;
-  background: #afb5c5;
   border-radius: 5px;
-  transform: rotate(-45deg);
 }
 .hero .hero__slider .slider-card__footer .slider-arrow .arrow-wrapper .rhomb-side.right {
   right: 2px;
-  background: #afb5c5;
   border-radius: 5px;
-  transform: rotate(-45deg);
   z-index: 1;
 }
 .hero .hero__slider .slider-card__footer .slider-arrow .arrow-wrapper .arrow-icon {
@@ -1270,7 +1277,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 
 .solutions-and-services {
   display: flex;
-  min-height: 661px;
+  min-height: clamp(520px, 55vw, 661px);
   position: relative;
   overflow: hidden;
   background: radial-gradient(50% 54% at 50% 50%, rgba(72, 95, 178, 0.15) 0%, rgba(72, 95, 178, 0.15) 40%, rgba(72, 95, 178, 0) 85%), #eaebed;
@@ -1289,27 +1296,27 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   align-items: flex-start;
   position: relative;
   z-index: 1;
-  padding: 60px 20px;
+  padding: clamp(36px, 5vw, 60px) clamp(12px, 2vw, 20px);
   box-sizing: border-box;
   overflow: visible;
 }
 .solutions-and-services h2 {
   font-family: "28ExpandedRegular", sans-serif;
   max-width: 288px;
-  font-size: 56px;
-  margin-right: 74px;
+  font-size: clamp(32px, 4vw, 56px);
+  margin-right: clamp(0px, 5vw, 74px);
   position: absolute;
-  left: 240px;
-  top: 60px;
+  left: clamp(0px, 16vw, 240px);
+  top: clamp(36px, 5vw, 60px);
   flex-shrink: 0;
 }
 .solutions-and-services .cards-solutions-and-services {
   display: flex;
-  gap: 24px;
+  gap: clamp(12px, 2vw, 24px);
   flex-wrap: wrap;
   align-items: flex-start;
-  margin-top: 50px;
-  margin-left: 362px;
+  margin-top: clamp(24px, 4vw, 50px);
+  margin-left: clamp(0px, 25vw, 362px);
 }
 .solutions-and-services .cards-solutions-and-services article {
   box-sizing: border-box;
@@ -1354,6 +1361,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
+  flex: 1;
 }
 .solutions-and-services .cards-solutions-and-services article ul li {
   font-family: "PF Encore Sans Pro", sans-serif;
@@ -1364,7 +1373,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   margin-bottom: 6px;
   font-size: 12pt;
   line-height: 110%;
-  max-width: 230px;
+  max-width: 100%;
+  width: 100%;
   transition: font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .solutions-and-services .cards-solutions-and-services article ul li img {
@@ -1422,7 +1432,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   color: #0e1428;
 }
 .solutions-and-services .cards-solutions-and-services article:hover ul li {
-  font-size: 13pt;
+  font-size: 12pt;
   max-width: 100%;
 }
 .solutions-and-services .cards-solutions-and-services article:hover ul li img {
@@ -1479,7 +1489,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     color: #0e1428;
   }
   .solutions-and-services .cards-solutions-and-services article.active-focus ul li {
-    font-size: 16px;
+    font-size: 12pt;
   }
   .solutions-and-services .cards-solutions-and-services article.active-focus ul li img {
     width: 7.08px;
@@ -1499,7 +1509,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     color: #0e1428;
   }
   .solutions-and-services .cards-solutions-and-services article:hover ul li {
-    font-size: 16px;
+    font-size: 12pt;
   }
   .solutions-and-services .cards-solutions-and-services article:hover ul li img {
     width: 7.08px;
@@ -1538,8 +1548,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   background: url("../public/composition.jpg") no-repeat center/cover;
   color: white;
   position: relative;
-  height: 951px;
-  padding-bottom: 100px;
+  height: clamp(700px, 66vw, 951px);
+  padding-bottom: clamp(50px, 7vw, 100px);
 }
 .advantages::before {
   content: "";
@@ -1559,7 +1569,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .advantages .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 56px;
+  padding: 0 clamp(16px, 4vw, 56px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1568,7 +1578,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .advantages h2 {
   font-family: "28ExpandedRegular", sans-serif;
-  font-size: 56px;
+  font-size: clamp(32px, 4vw, 56px);
   margin: 0;
   line-height: 1.1;
   transform: translateY(5px);
@@ -1577,18 +1587,18 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: block;
 }
 .advantages .advantages-top {
-  padding-top: 80px;
+  padding-top: clamp(40px, 6vw, 80px);
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: clamp(24px, 4vw, 50px);
 }
 .advantages .advantages-top .advantages-title-row {
   display: flex;
   align-items: center;
 }
 .advantages .advantages-top .advantages-title-row img {
-  width: 240px;
+  width: clamp(80px, 16vw, 240px);
   height: 1px;
   object-fit: contain;
   transform: translateY(-38px);
@@ -1596,7 +1606,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .advantages .advantages-top p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: clamp(11pt, 1vw, 14pt);
   line-height: 1.4;
   max-width: 600px;
   margin: 0;
@@ -1798,30 +1808,30 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   background: #00101d radial-gradient(ellipse at center, rgba(162, 178, 236, 0.3490196078) 0%, rgba(162, 178, 236, 0) 75%);
   color: white;
   overflow: hidden;
-  padding: 80px 0;
+  padding: clamp(40px, 6vw, 80px) 0;
 }
 .news .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(16px, 2.2vw, 20px);
 }
 .news .news__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: clamp(24px, 4vw, 50px);
 }
 .news .news__header h2 {
   font-family: "28ExpandedRegular", sans-serif;
-  font-size: 64px;
+  font-size: clamp(32px, 4.4vw, 64px);
   margin: 0;
 }
 .news .news__header div {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: clamp(12px, 2vw, 30px);
   flex: 1;
-  margin-left: 40px;
+  margin-left: clamp(0px, 2.8vw, 40px);
 }
 .news .news__header div img {
   width: 120px;
@@ -2180,7 +2190,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   }
 }
 .partners {
-  padding: 100px 0;
+  padding: clamp(40px, 7vw, 100px) 0;
   background: radial-gradient(ellipse 1330px 378px at center, rgba(162, 178, 236, 0.168627451) 0%, rgba(162, 178, 236, 0) 70%), #f4f6f9;
   border-radius: 30px;
   width: 100%;
@@ -2193,7 +2203,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .partners .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 56px;
+  padding: 0 clamp(16px, 4vw, 56px);
   display: flex;
   flex-direction: column;
 }
@@ -2201,7 +2211,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin-bottom: clamp(28px, 6vw, 80px);
   gap: 0;
 }
 .partners .partners__header h2 {
@@ -2216,7 +2226,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   flex-shrink: 0;
 }
 .partners .partners__header h2 .partners__line {
-  width: 240px;
+  width: clamp(110px, 16vw, 240px);
   height: auto;
   margin-left: 25px;
   flex-shrink: 0;
@@ -2233,11 +2243,11 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   align-items: flex-start;
   max-width: 650px;
-  margin-top: 15px;
-  margin-left: -350px;
+  margin-top: clamp(0px, 1vw, 15px);
+  margin-left: clamp(-350px, -24vw, 0px);
 }
 .partners .partners__header .partners__description p {
-  font-family: "BeauSans-Light", sans-serif;
+  font-family: "PF Encore Sans Pro", sans-serif;
   font-size: 18px;
   line-height: 1.4;
   color: #0d1b3e;
@@ -2390,7 +2400,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   }
 }
 .clients {
-  padding: 100px 0;
+  padding: clamp(40px, 7vw, 100px) 0;
   background: radial-gradient(50% 50% at 50% 50%, rgba(143, 167, 255, 0.3490196078) 0%, rgba(143, 167, 255, 0) 100%), linear-gradient(70.52deg, #0e1428 0%, #1b2549 100%);
   width: 100%;
   overflow: hidden;
@@ -2398,20 +2408,20 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .clients .container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 56px;
+  padding: 0 clamp(16px, 4vw, 56px);
 }
 .clients .clients__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 51px;
+  gap: clamp(20px, 3.5vw, 51px);
 }
 .clients .clients__info {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   align-items: center;
-  column-gap: 30px;
+  column-gap: clamp(14px, 2vw, 30px);
   flex-shrink: 0;
 }
 .clients .clients__info .clients__title-row {
@@ -2427,21 +2437,21 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   margin: 0;
 }
 .clients .clients__info .clients__title-row img {
-  width: 170px;
+  width: clamp(90px, 12vw, 170px);
   height: auto;
   margin-top: 18px;
   flex-shrink: 0;
 }
 .clients .clients__info .clients__subtitle {
   font-family: "28ExtraExpandedRegular", sans-serif;
-  font-size: 56px;
+  font-size: clamp(30px, 4vw, 56px);
   line-height: 1.1;
   color: #ffffff;
   margin: 5px 0 0 0;
   padding-left: 105px;
 }
 .clients .clients__info p {
-  font-family: "BeauSans-Light", sans-serif;
+  font-family: "PF Encore Sans Pro", sans-serif;
   font-size: 18px;
   line-height: 1.3;
   color: #ffffff;
@@ -2583,7 +2593,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   }
 }
 .achievements {
-  padding: 120px 0;
+  padding: clamp(70px, 8vw, 120px) 0;
   background: linear-gradient(180deg, #00101D 0%, rgba(0, 16, 29, 0) 100%), url("../public/main-cubes.png") no-repeat center;
   background-size: cover;
   color: #ffffff;
@@ -2609,7 +2619,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .achievements .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 56px;
+  padding: 0 clamp(16px, 4vw, 56px);
   width: 100%;
   position: relative;
   z-index: 2;
@@ -2618,7 +2628,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 100px;
+  gap: clamp(28px, 7vw, 100px);
 }
 .achievements .achievements__title-block {
   flex-shrink: 0;
@@ -2629,7 +2639,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   font-family: "28ExtraExpandedRegular", sans-serif;
   font-size: 56px;
   line-height: 1.1;
-  margin: 0 0 30px 0;
+  margin: 0 0 clamp(16px, 2vw, 30px) 0;
 }
 .achievements .achievements__slider {
   display: flex;
@@ -2637,8 +2647,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   gap: 0;
 }
 .achievements .achievements__select-wrapper {
-  width: 421px;
-  height: 86px;
+  width: clamp(260px, 30vw, 421px);
+  height: clamp(64px, 6vw, 86px);
   padding: 0 22px;
   display: inline-flex;
   align-items: center;
@@ -2870,7 +2880,12 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     padding: 0 40px;
   }
   .achievements .achievements__wrapper {
+    flex-wrap: wrap;
     gap: 50px;
+  }
+  .achievements .achievements__title-block {
+    width: 100%;
+    position: static;
   }
   .achievements .achievements__slider {
     gap: 0;
@@ -2914,12 +2929,13 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     display: none;
   }
   .achievements .achievements__stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 40px;
-    row-gap: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 40px;
+    width: 100%;
   }
   .achievements .achievements__stats .stat-item {
+    width: calc(50% - 20px);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -2993,12 +3009,13 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     font-size: 28px;
   }
   .achievements .achievements__stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
     width: 100%;
   }
   .achievements .achievements__stats .stat-item {
+    width: calc(50% - 10px);
     margin-top: 0;
     padding-bottom: 60px;
   }
@@ -3027,7 +3044,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   }
 }
 .feedback {
-  padding: 120px 0;
+  padding: clamp(60px, 8vw, 120px) 0;
   background: linear-gradient(70.52deg, #0e1428 0%, #1b2549 100%);
   position: relative;
   overflow: hidden;
@@ -3051,7 +3068,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .feedback .container {
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 clamp(16px, 4.2vw, 60px);
   position: relative;
   z-index: 1;
 }
@@ -3059,19 +3076,19 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 100px;
+  gap: clamp(28px, 7vw, 100px);
 }
 .feedback .feedback__info {
   max-width: 320px;
   flex-shrink: 0;
-  margin-top: 40px;
+  margin-top: clamp(0px, 3vw, 40px);
 }
 .feedback .feedback__info h2 {
   font-family: "28ExtraExpandedRegular", sans-serif;
   font-size: 56px;
   line-height: 0.9;
   color: #ffffff;
-  margin: 0 50px 50px 0;
+  margin: 0 clamp(0px, 3.5vw, 50px) clamp(20px, 3.5vw, 50px) 0;
 }
 .feedback .feedback__info p {
   font-family: "PF Encore Sans Pro", sans-serif;
@@ -3085,7 +3102,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .feedback .feedback__form {
   background: #f4f6f9;
   border-radius: 40px;
-  padding: 60px 80px;
+  padding: clamp(28px, 4.2vw, 60px) clamp(20px, 5.5vw, 80px);
   flex-grow: 1;
   width: 1008px;
 }
@@ -3243,6 +3260,43 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .feedback .feedback__form .form-bottom .form-actions .btn-news {
   width: 285px;
+  height: 42px;
+  border: none;
+  transform: none;
+  background: linear-gradient(180deg, #e4200e -3.57%, #e44e0e 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "28ExpandedRegular", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  transition: background 1.2s ease-in-out, box-shadow 0.4s ease-out;
+}
+.feedback .feedback__form .form-bottom .form-actions .btn-news::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1px;
+  background: linear-gradient(0deg, rgba(255, 113, 100, 0) 0%, #ff7164 53.85%, rgba(255, 113, 100, 0) 99.04%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: background 1.2s ease-in-out;
+}
+.feedback .feedback__form .form-bottom .form-actions .btn-news:hover {
+  background: linear-gradient(180deg, #e4200e -3.57%, #ff7a62 100%);
+  box-shadow: 0 0 20px 0 rgba(228, 32, 14, 0.5);
+}
+.feedback .feedback__form .form-bottom .form-actions .btn-news:hover::before {
+  background: linear-gradient(0deg, #ff9706 0%, #e4200e 100%);
 }
 
 @media (max-width: 1200px) {
@@ -3330,21 +3384,23 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 footer {
   background: linear-gradient(70.52deg, #0e1428 0%, #1b2549 100%);
-  padding: 60px 0 40px;
+  padding: clamp(40px, 5vw, 60px) 0 clamp(24px, 3.5vw, 40px);
   color: #ffffff;
   position: relative;
   border-top: none;
 }
 footer .container {
-  max-width: 1440px;
+  max-width: clamp(320px, 96vw, 1440px);
+  width: 100%;
+  flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0 56px;
+  padding: 0 clamp(16px, 4vw, 56px);
 }
 footer .footer__top {
   display: flex;
   align-items: flex-start;
-  gap: 60px;
-  margin-bottom: 80px;
+  gap: clamp(24px, 4vw, 60px);
+  margin-bottom: clamp(30px, 6vw, 80px);
   flex-wrap: nowrap;
 }
 footer .footer__brand-wrapper {
@@ -3357,16 +3413,17 @@ footer .footer__brand {
   flex-shrink: 0;
 }
 footer .footer__brand img {
-  height: 24px;
+  height: clamp(18px, 2vw, 24px);
   width: auto;
 }
 footer .footer__nav {
   display: flex;
   justify-content: space-between;
   flex: 1 1 auto;
+  flex-wrap: wrap;
   min-width: 0;
-  padding-right: 40px;
-  margin-top: -15px;
+  padding-right: clamp(0px, 2.8vw, 40px);
+  margin-top: clamp(-15px, -1vw, 0px);
 }
 footer .footer__column .footer__column-header {
   display: flex;
@@ -3378,9 +3435,9 @@ footer .footer__column .footer__mobile-arrow {
 footer .footer__column h3 {
   font-family: "18ExpandedSemiBold", sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: clamp(12px, 0.95vw, 14px);
   line-height: 110%;
-  margin-bottom: 25px;
+  margin-bottom: clamp(14px, 2vw, 25px);
   color: #ffffff;
 }
 footer .footer__column ul {
@@ -3389,7 +3446,7 @@ footer .footer__column ul {
   margin: 0;
 }
 footer .footer__column ul li {
-  margin-bottom: 12px;
+  margin-bottom: clamp(8px, 1vw, 12px);
 }
 footer .footer__column ul li a {
   text-decoration: none;
@@ -3397,7 +3454,7 @@ footer .footer__column ul li a {
   opacity: 0.7;
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: clamp(12px, 0.95vw, 14px);
   line-height: 110%;
   transition: opacity 0.2s;
 }
@@ -3406,17 +3463,18 @@ footer .footer__column ul li a:hover {
 }
 footer .footer__socials {
   display: flex;
-  gap: 12px;
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1vw, 12px);
+  flex-shrink: 1;
   margin-left: auto;
 }
 footer .footer__socials a {
   display: flex;
 }
 footer .footer__socials a img {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
+  width: clamp(24px, 2.3vw, 32px);
+  height: clamp(24px, 2.3vw, 32px);
+  border-radius: clamp(4px, 0.5vw, 6px);
 }
 footer .footer__bottom-grid {
   display: flex;
@@ -3425,11 +3483,11 @@ footer .footer__bottom-grid {
 footer .footer__contacts-block {
   display: flex;
   flex-direction: column;
-  min-width: 280px;
+  min-width: clamp(220px, 22vw, 280px);
 }
 footer .footer__contacts-block .footer__contacts-content {
   display: flex;
-  gap: 30px;
+  gap: clamp(16px, 2vw, 30px);
 }
 footer .footer__contacts-block .footer__contacts-content .footer__contact-info {
   display: flex;
@@ -3442,7 +3500,7 @@ footer .footer__contacts-block .footer__contacts-content .footer__contact-info a
   color: #ffffff;
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: clamp(12px, 0.95vw, 14px);
   opacity: 0.7;
   transition: opacity 0.2s;
 }
@@ -3453,18 +3511,18 @@ footer .footer__contacts-block .footer__contacts-content address {
   font-style: normal;
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: clamp(12px, 0.95vw, 14px);
   line-height: 1.4;
   opacity: 0.7;
-  max-width: 180px;
+  max-width: clamp(140px, 14vw, 180px);
 }
 footer .footer__legal {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: clamp(18px, 2.8vw, 40px);
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: clamp(12px, 0.95vw, 14px);
   line-height: 110%;
 }
 footer .footer__legal span {
