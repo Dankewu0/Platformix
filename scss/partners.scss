@@ -21,6 +21,7 @@
     padding: 0 clamp(16px, 4vw, 56px);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .partners__header {
@@ -91,6 +92,7 @@
     align-items: center;
     justify-items: center;
     width: 100%;
+    max-width: 100%;
     will-change: transform;
 
     img {
@@ -184,6 +186,7 @@
       width: 100vw;
       margin-left: calc(-50vw + 50%);
       margin-bottom: 48px;
+      overflow: hidden;
     }
 
     .partners__grid {
@@ -192,6 +195,7 @@
       grid-auto-flow: column;
       grid-template-columns: none;
       width: max-content;
+      max-width: none;
       height: auto;
       row-gap: 40px;
       column-gap: 80px;

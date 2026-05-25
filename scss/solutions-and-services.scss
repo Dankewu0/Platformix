@@ -15,9 +15,9 @@
   background-repeat: no-repeat;
   background-position: center;
   z-index: 100;
-  border-radius: 30px;
-  margin-top: -30px;
-  margin-bottom: -30px;
+  border-radius: clamp(20px, 2.083vw, 30px);
+  margin-top: clamp(-20px, -2.083vw, -30px);
+  margin-bottom: clamp(-20px, -2.083vw, -30px);
 
   .container {
     width: 100%;
@@ -33,7 +33,7 @@
 
   h2 {
     font-family: "28ExpandedRegular", sans-serif;
-    max-width: 288px;
+    max-width: clamp(200px, 20vw, 288px);
     font-size: clamp(32px, 4vw, 56px);
     margin-right: clamp(0px, 5vw, 74px);
     position: absolute;
@@ -52,9 +52,9 @@
 
     article {
       box-sizing: border-box;
-      padding: 0 24px 24px 24px;
+      padding: 0 clamp(12px, 1.667vw, 24px) clamp(12px, 1.667vw, 24px);
       background: rgba(254, 254, 255, 0.18);
-      border-radius: 20px;
+      border-radius: clamp(14px, 1.389vw, 20px);
       box-shadow:
         inset 5.46667px -5.46667px 5.46667px rgba(197, 197, 199, 0.32),
         inset -5.46667px 5.46667px 5.46667px rgba(255, 255, 255, 0.32);
@@ -70,8 +70,8 @@
         box-shadow 0.4s ease;
       will-change: width, height;
       cursor: pointer;
-      width: 280px;
-      height: 356px;
+      width: clamp(220px, 19.444vw, 280px);
+      height: clamp(280px, 24.722vw, 356px);
 
       &::before {
         content: "";
@@ -95,11 +95,11 @@
 
       h3 {
         font-family: "28ExpandedRegular", sans-serif;
-        margin-bottom: 16px;
-        padding-top: 15px;
-        font-size: 18px;
+        margin-bottom: clamp(8px, 1.111vw, 16px);
+        padding-top: clamp(8px, 1.042vw, 15px);
+        font-size: clamp(14px, 1.25vw, 18px);
         line-height: 1.1;
-        max-width: 240px;
+        max-width: clamp(180px, 16.667vw, 240px);
         transition: font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
 
@@ -115,18 +115,18 @@
           font-weight: 300;
           display: flex;
           align-items: flex-start;
-          gap: 10px;
-          margin-bottom: 6px;
-          font-size: 12pt;
+          gap: clamp(5px, 0.694vw, 10px);
+          margin-bottom: clamp(3px, 0.417vw, 6px);
+          font-size: clamp(10pt, 0.833vw, 12pt);
           line-height: 110%;
           max-width: 100%;
           width: 100%;
           transition: font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
           img {
-            width: 5.9px;
-            height: 5.9px;
-            margin-top: 4px;
+            width: clamp(4px, 0.41vw, 5.9px);
+            height: clamp(4px, 0.41vw, 5.9px);
+            margin-top: clamp(2px, 0.278vw, 4px);
             flex-shrink: 0;
             transition:
               width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -141,18 +141,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 147px;
-        height: 42px;
+        width: clamp(120px, 10.208vw, 147px);
+        height: clamp(34px, 2.917vw, 42px);
         color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: clamp(8px, 0.694vw, 10px);
         position: relative;
-        background: linear-gradient(176.75deg, #17203F 2.81%, #5B6893 97.46%);
-        font-size: 14px;
+        background: linear-gradient(176.75deg, #17203f 2.81%, #5b6893 97.46%);
+        font-size: clamp(12px, 0.972vw, 14px);
         box-sizing: border-box;
         z-index: 1;
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(clamp(6px, 0.833vw, 12px));
         transition:
           opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
           transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -164,9 +164,9 @@
           content: "";
           position: absolute;
           inset: 0;
-          border-radius: 10px;
+          border-radius: inherit;
           padding: 1px;
-          background: linear-gradient(180deg, #1A1935 0%, #807DC9 100%);
+          background: linear-gradient(180deg, #1a1935 0%, #807dc9 100%);
           -webkit-mask:
             linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
@@ -176,15 +176,16 @@
         }
 
         &:hover {
-          background: linear-gradient(176.75deg, #17203F 2.81%, #5E77CD 97.46%);
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          background: linear-gradient(176.75deg, #17203f 2.81%, #5e77cd 97.46%);
+          box-shadow:
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
             0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
       }
 
       &:hover {
-        width: 400px;
-        height: 420px;
+        width: clamp(320px, 27.778vw, 400px);
+        height: clamp(340px, 29.167vw, 420px);
         box-shadow:
           inset 5.46667px -5.46667px 5.46667px rgba(197, 197, 199, 0.32),
           inset -5.46667px 5.46667px 5.46667px rgba(255, 255, 255, 0.32),
@@ -193,17 +194,17 @@
         z-index: 2;
 
         h3 {
-          font-size: 24px;
+          font-size: clamp(18px, 1.667vw, 24px);
           color: #0e1428;
         }
 
         ul li {
-          font-size: 12pt;
+          font-size: clamp(10pt, 0.833vw, 12pt);
           max-width: 100%;
 
           img {
-            width: 7.08px;
-            height: 7.08px;
+            width: clamp(5px, 0.49vw, 7.08px);
+            height: clamp(5px, 0.49vw, 7.08px);
           }
         }
 

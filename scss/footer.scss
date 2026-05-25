@@ -125,7 +125,7 @@ footer {
       .footer__contact-info {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: clamp(8px, 0.83vw, 12px);
         flex-shrink: 0;
 
         a {
@@ -186,13 +186,13 @@ footer {
   footer {
     .footer__top {
       flex-direction: column;
-      margin-bottom: 40px;
-      gap: 40px;
+      margin-bottom: clamp(30px, 5vw, 40px);
+      gap: clamp(30px, 5vw, 40px);
     }
     .footer__nav {
       width: 100%;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: clamp(30px, 5vw, 40px);
       padding-right: 0;
       margin-top: 0;
     }
@@ -204,16 +204,16 @@ footer {
 
 @media (max-width: 768px) {
   footer {
-    padding: 40px 0 30px;
+    padding: clamp(30px, 8vw, 40px) 0 clamp(20px, 6vw, 30px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 
     .container {
-      padding: 0 20px;
+      padding: 0 clamp(12px, 4vw, 20px);
     }
 
     .footer__top {
-      gap: 30px;
-      margin-bottom: 30px;
+      gap: clamp(20px, 6vw, 30px);
+      margin-bottom: clamp(20px, 6vw, 30px);
     }
 
     .footer__brand-wrapper {
@@ -231,45 +231,45 @@ footer {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
         .footer__column-header {
-          padding: 15px 0;
+          padding: clamp(12px, 3vw, 15px) 0;
           cursor: pointer;
         }
 
         h3 {
           margin-bottom: 0;
-          font-size: 14px;
+          font-size: clamp(13px, 2.8vw, 14px);
         }
 
         .footer__mobile-arrow {
           display: block;
-          width: 16px;
+          width: clamp(14px, 3vw, 16px);
           opacity: 0.5;
         }
 
         ul {
           display: none;
-          padding-bottom: 15px;
+          padding-bottom: clamp(12px, 3vw, 15px);
         }
       }
     }
 
     .footer__contacts-block {
-      margin-top: 20px;
+      margin-top: clamp(15px, 4vw, 20px);
       min-width: 0;
 
       h3 {
-        font-size: 14px;
-        margin-bottom: 15px;
+        font-size: clamp(13px, 2.8vw, 14px);
+        margin-bottom: clamp(12px, 3vw, 15px);
       }
 
       .footer__contacts-content {
         flex-direction: row;
-        gap: 20px;
+        gap: clamp(15px, 4vw, 20px);
 
         .footer__contact-info,
         address {
           max-width: 45%;
-          font-size: 12px;
+          font-size: clamp(11px, 2.4vw, 12px);
         }
       }
     }
@@ -277,18 +277,18 @@ footer {
     .footer__legal {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      padding-top: 20px;
+      gap: clamp(12px, 3vw, 15px);
+      padding-top: clamp(15px, 4vw, 20px);
 
       a {
-        font-size: 12px;
+        font-size: clamp(11px, 2.4vw, 12px);
       }
 
       span {
         grid-column: span 2;
         margin-left: 0;
-        font-size: 12px;
-        padding-top: 10px;
+        font-size: clamp(11px, 2.4vw, 12px);
+        padding-top: clamp(8px, 2vw, 10px);
       }
     }
   }

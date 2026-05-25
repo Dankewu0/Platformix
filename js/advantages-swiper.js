@@ -66,6 +66,13 @@ const initAdvantagesScroll = (() => {
     viewport.removeEventListener("touchstart", onTouchStart);
     viewport.removeEventListener("touchmove", onTouchMove);
     viewport.removeEventListener("touchend", onTouchEnd);
+
+    const clones = track.querySelectorAll("[data-clone]");
+    clones.forEach((clone) => clone.remove());
+    initialized = false;
+    cardsOriginal = [];
+    track.style.transform = "";
+    track.style.transition = "";
   };
 
   const setupClones = () => {
@@ -85,6 +92,7 @@ const initAdvantagesScroll = (() => {
   };
 
   const calculate = () => {
+    if (!cardsOriginal.length) return;
     const cardWidth = cardsOriginal[0].offsetWidth;
     const gap = parseInt(getComputedStyle(track).gap) || 0;
 
@@ -103,8 +111,6 @@ const initAdvantagesScroll = (() => {
 
     if (isDesktop) {
       destroy();
-      track.style.transform = "none";
-      track.style.transition = "none";
       return;
     }
 
@@ -133,8 +139,6 @@ const initAdvantagesScroll = (() => {
     viewport.addEventListener("touchstart", onTouchStart, { passive: true });
     viewport.addEventListener("touchmove", onTouchMove, { passive: true });
     viewport.addEventListener("touchend", onTouchEnd);
-
-    update();
 
     requestAnimationFrame(() => {
       update();

@@ -6,7 +6,7 @@ header {
   z-index: 102;
   display: flex;
   align-items: center;
-  height: 109px;
+  height: clamp(60px, 11vw, 109px);
   justify-content: center;
   font-family: "18ExpandedRegular", sans-serif;
 
@@ -62,7 +62,7 @@ header {
     .border-sides {
       position: absolute;
       inset: 0;
-      border-radius: 10px;
+      border-radius: clamp(8px, 1vw, 10px);
       pointer-events: none;
     }
     .platformix {
@@ -72,7 +72,7 @@ header {
     }
     img {
       height: clamp(5px, 1.15vw, 20px);
-      margin-top: 2px;
+      margin-top: clamp(0px, 0.2vw, 2px);
       width: auto;
     }
     .menu {
@@ -134,7 +134,9 @@ header {
 
           opacity: 0;
           visibility: hidden;
-          transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+          transition:
+            opacity 0.25s ease,
+            visibility 0s linear 0.25s;
         }
 
         a {
@@ -146,14 +148,16 @@ header {
           justify-content: center;
           align-items: center;
           white-space: nowrap;
-          padding: 8px 0;
+          padding: clamp(4px, 0.8vw, 8px) 0;
           font-family: "18ExpandedRegular", sans-serif;
         }
 
         &.active div {
           opacity: 1;
           visibility: visible;
-          transition: opacity 0.25s ease, visibility 0s linear 0s;
+          transition:
+            opacity 0.25s ease,
+            visibility 0s linear 0s;
         }
       }
     }
@@ -167,10 +171,10 @@ header {
 
     .phone-btn {
       display: none;
-      width: 37px;
-      height: 37px;
+      width: clamp(32px, 3.7vw, 37px);
+      height: clamp(32px, 3.7vw, 37px);
       background: rgba(250, 250, 250, 0.1);
-      border-radius: 10px;
+      border-radius: clamp(8px, 1vw, 10px);
       align-items: center;
       justify-content: center;
       border: none;
@@ -183,10 +187,10 @@ header {
 
     .burger {
       display: none;
-      width: 44px;
-      height: 44px;
+      width: clamp(40px, 4.4vw, 44px);
+      height: clamp(40px, 4.4vw, 44px);
       background: rgba(250, 250, 250, 0.1);
-      border-radius: 10px;
+      border-radius: clamp(8px, 1vw, 10px);
       border: none;
       align-items: center;
       justify-content: center;
@@ -196,8 +200,8 @@ header {
       overflow: hidden;
 
       .burger-icon {
-        width: 22px;
-        height: 16px;
+        width: clamp(18px, 2.2vw, 22px);
+        height: clamp(13px, 1.6vw, 16px);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -208,9 +212,11 @@ header {
         display: block;
         width: 100%;
         height: 1px;
-        background: #A0B2D4;
+        background: #a0b2d4;
         opacity: 0.85;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
         transform-origin: center;
       }
 
@@ -251,7 +257,8 @@ header {
     background: linear-gradient(70.52deg, #0e1428 0%, #1b2549 100%);
     backdrop-filter: blur(15px);
     z-index: 999999999999;
-    padding: 120px 20px 40px;
+    padding: clamp(80px, 12vw, 120px) clamp(10px, 3vw, 20px)
+      clamp(30px, 5vw, 40px);
     box-sizing: border-box;
     overflow-y: auto;
     &.active {
@@ -259,20 +266,20 @@ header {
     }
     .platformix {
       position: absolute;
-      top: 30px;
-      left: 20px;
-      width: 96px;
-      height: 20px;
+      top: clamp(20px, 3vw, 30px);
+      left: clamp(10px, 2vw, 20px);
+      width: clamp(72px, 7.5vw, 96px);
+      height: clamp(15px, 1.6vw, 20px);
     }
     .close-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 44px;
-      height: 44px;
+      top: clamp(15px, 2vw, 20px);
+      right: clamp(15px, 2vw, 20px);
+      width: clamp(40px, 4.4vw, 44px);
+      height: clamp(40px, 4.4vw, 44px);
       background: rgba(250, 250, 250, 0.1);
       backdrop-filter: blur(25px);
-      border-radius: 10px;
+      border-radius: clamp(8px, 1vw, 10px);
       border: none;
       cursor: pointer;
       display: flex;
@@ -284,15 +291,21 @@ header {
         content: "";
         position: absolute;
         inset: 0;
-        border-radius: 10px;
+        border-radius: clamp(8px, 1vw, 10px);
         padding: 1px;
-        background: linear-gradient(218.73deg, rgba(108, 121, 144, 0.1) 0%, #A0B2D4 49.29%, rgba(108, 121, 144, 0.1) 100%);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        background: linear-gradient(
+          218.73deg,
+          rgba(108, 121, 144, 0.1) 0%,
+          #a0b2d4 49.29%,
+          rgba(108, 121, 144, 0.1) 100%
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
       }
-
     }
     .menu-group {
       .menu-group-btn {
@@ -301,17 +314,17 @@ header {
         justify-content: center;
         max-width: 335px;
         width: 100%;
-        padding: 20px 0;
+        padding: clamp(10px, 2vw, 20px) 0;
         color: white;
-        font-size: 24px;
+        font-size: clamp(16px, 2.4vw, 24px);
         font-family: "18ExpandedRegular", sans-serif;
         background: none;
         border: none;
         cursor: pointer;
         text-align: center;
-        gap: 10px;
+        gap: clamp(5px, 1vw, 10px);
         position: relative;
-        margin-left: 25px;
+        margin-left: clamp(15px, 2.5vw, 25px);
         flex-shrink: 0;
         align-self: flex-start;
         span {
@@ -326,15 +339,17 @@ header {
       .submenu {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+        transition:
+          max-height 0.3s ease,
+          padding 0.3s ease;
         padding: 0 10px;
         a {
           display: block;
           color: rgba(255, 255, 255, 0.7);
           text-decoration: none;
-          font-size: 18px;
+          font-size: clamp(14px, 1.8vw, 18px);
           font-family: "18ExpandedRegular", sans-serif;
-          padding: 10px 0;
+          padding: clamp(5px, 1vw, 10px) 0;
           text-align: center;
         }
       }
@@ -353,10 +368,10 @@ header {
         justify-content: center;
         max-width: 335px;
         width: 100%;
-        margin: 0 10px;
-        padding: 15px;
+        margin: 0 clamp(5px, 1vw, 10px);
+        padding: clamp(10px, 1.5vw, 15px);
         color: white;
-        font-size: 24px;
+        font-size: clamp(16px, 2.4vw, 24px);
         font-family: "18ExpandedRegular", sans-serif;
         background: rgba(166, 193, 245, 0.18);
         backdrop-filter: blur(25px);
@@ -364,13 +379,13 @@ header {
         border-radius: 10px;
         cursor: pointer;
         text-align: center;
-        gap: 10px;
+        gap: clamp(5px, 1vw, 10px);
         position: relative;
         box-sizing: border-box;
         border-top: none;
         border-bottom: none;
-        border-left: 1px solid #B1CAFA;
-        border-right: 1px solid #B1CAFA;
+        border-left: 1px solid #b1cafa;
+        border-right: 1px solid #b1cafa;
         flex-shrink: 0;
         align-self: flex-start;
         span {
@@ -392,7 +407,10 @@ header {
     backdrop-filter: none;
     border-left: clamp(0.5px, 0.08vw, 1px) solid transparent;
     border-right: clamp(0.5px, 0.08vw, 1px) solid transparent;
-    transition: background 0.25s ease, backdrop-filter 0.25s ease, border-color 0.25s ease;
+    transition:
+      background 0.25s ease,
+      backdrop-filter 0.25s ease,
+      border-color 0.25s ease;
   }
 
   header.header--scrolled .container {
@@ -408,7 +426,9 @@ header {
   }
 
   header.header--scrolled .menu > div.active div {
-    transition: opacity 0.25s ease 0.25s, visibility 0s linear 0.25s;
+    transition:
+      opacity 0.25s ease 0.25s,
+      visibility 0s linear 0.25s;
   }
 
   header.header--scrolled .menu > div div {
@@ -485,7 +505,6 @@ header {
       margin-left: 15px;
     }
   }
-
 }
 
 @media (max-width: 768px) {
@@ -501,7 +520,7 @@ header {
   }
   header .mobile-menu {
     padding: 80px 20px 40px;
-    .menu-group{
+    .menu-group {
       display: flex;
       flex-direction: column;
     }
@@ -512,7 +531,7 @@ header {
     .menu-group.open .submenu {
       background: none;
       backdrop-filter: none;
-      border-bottom: 1px solid #FFFFFF;
+      border-bottom: 1px solid #ffffff;
     }
   }
 }

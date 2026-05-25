@@ -385,7 +385,7 @@
   font-style: italic;
 }
 body {
-  padding: 0 auto;
+  padding: 0;
   margin: 0 auto;
 }
 
@@ -397,7 +397,7 @@ header {
   z-index: 102;
   display: flex;
   align-items: center;
-  height: 109px;
+  height: clamp(60px, 11vw, 109px);
   justify-content: center;
   font-family: "18ExpandedRegular", sans-serif;
 }
@@ -451,7 +451,7 @@ header .container.has-active::before {
 header .container .border-sides {
   position: absolute;
   inset: 0;
-  border-radius: 10px;
+  border-radius: clamp(8px, 1vw, 10px);
   pointer-events: none;
 }
 header .container .platformix {
@@ -461,7 +461,7 @@ header .container .platformix {
 }
 header .container img {
   height: clamp(5px, 1.15vw, 20px);
-  margin-top: 2px;
+  margin-top: clamp(0px, 0.2vw, 2px);
   width: auto;
 }
 header .container .menu {
@@ -526,7 +526,7 @@ header .container .menu > div a {
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  padding: 8px 0;
+  padding: clamp(4px, 0.8vw, 8px) 0;
   font-family: "18ExpandedRegular", sans-serif;
 }
 header .container .menu > div.active div {
@@ -542,10 +542,10 @@ header .container .phone {
 }
 header .container .phone-btn {
   display: none;
-  width: 37px;
-  height: 37px;
+  width: clamp(32px, 3.7vw, 37px);
+  height: clamp(32px, 3.7vw, 37px);
   background: rgba(250, 250, 250, 0.1);
-  border-radius: 10px;
+  border-radius: clamp(8px, 1vw, 10px);
   align-items: center;
   justify-content: center;
   border: none;
@@ -556,10 +556,10 @@ header .container .phone-btn img {
 }
 header .container .burger {
   display: none;
-  width: 44px;
-  height: 44px;
+  width: clamp(40px, 4.4vw, 44px);
+  height: clamp(40px, 4.4vw, 44px);
   background: rgba(250, 250, 250, 0.1);
-  border-radius: 10px;
+  border-radius: clamp(8px, 1vw, 10px);
   border: none;
   align-items: center;
   justify-content: center;
@@ -569,8 +569,8 @@ header .container .burger {
   overflow: hidden;
 }
 header .container .burger .burger-icon {
-  width: 22px;
-  height: 16px;
+  width: clamp(18px, 2.2vw, 22px);
+  height: clamp(13px, 1.6vw, 16px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -580,7 +580,7 @@ header .container .burger .burger-line {
   display: block;
   width: 100%;
   height: 1px;
-  background: #A0B2D4;
+  background: #a0b2d4;
   opacity: 0.85;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform-origin: center;
@@ -616,7 +616,7 @@ header .mobile-menu {
   background: linear-gradient(70.52deg, #0e1428 0%, #1b2549 100%);
   backdrop-filter: blur(15px);
   z-index: 999999999999;
-  padding: 120px 20px 40px;
+  padding: clamp(80px, 12vw, 120px) clamp(10px, 3vw, 20px) clamp(30px, 5vw, 40px);
   box-sizing: border-box;
   overflow-y: auto;
 }
@@ -625,20 +625,20 @@ header .mobile-menu.active {
 }
 header .mobile-menu .platformix {
   position: absolute;
-  top: 30px;
-  left: 20px;
-  width: 96px;
-  height: 20px;
+  top: clamp(20px, 3vw, 30px);
+  left: clamp(10px, 2vw, 20px);
+  width: clamp(72px, 7.5vw, 96px);
+  height: clamp(15px, 1.6vw, 20px);
 }
 header .mobile-menu .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
+  top: clamp(15px, 2vw, 20px);
+  right: clamp(15px, 2vw, 20px);
+  width: clamp(40px, 4.4vw, 44px);
+  height: clamp(40px, 4.4vw, 44px);
   background: rgba(250, 250, 250, 0.1);
   backdrop-filter: blur(25px);
-  border-radius: 10px;
+  border-radius: clamp(8px, 1vw, 10px);
   border: none;
   cursor: pointer;
   display: flex;
@@ -651,9 +651,9 @@ header .mobile-menu .close-btn::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 10px;
+  border-radius: clamp(8px, 1vw, 10px);
   padding: 1px;
-  background: linear-gradient(218.73deg, rgba(108, 121, 144, 0.1) 0%, #A0B2D4 49.29%, rgba(108, 121, 144, 0.1) 100%);
+  background: linear-gradient(218.73deg, rgba(108, 121, 144, 0.1) 0%, #a0b2d4 49.29%, rgba(108, 121, 144, 0.1) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -665,17 +665,17 @@ header .mobile-menu .menu-group .menu-group-btn {
   justify-content: center;
   max-width: 335px;
   width: 100%;
-  padding: 20px 0;
+  padding: clamp(10px, 2vw, 20px) 0;
   color: white;
-  font-size: 24px;
+  font-size: clamp(16px, 2.4vw, 24px);
   font-family: "18ExpandedRegular", sans-serif;
   background: none;
   border: none;
   cursor: pointer;
   text-align: center;
-  gap: 10px;
+  gap: clamp(5px, 1vw, 10px);
   position: relative;
-  margin-left: 25px;
+  margin-left: clamp(15px, 2.5vw, 25px);
   flex-shrink: 0;
   align-self: flex-start;
 }
@@ -697,9 +697,9 @@ header .mobile-menu .menu-group .submenu a {
   display: block;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 18px;
+  font-size: clamp(14px, 1.8vw, 18px);
   font-family: "18ExpandedRegular", sans-serif;
-  padding: 10px 0;
+  padding: clamp(5px, 1vw, 10px) 0;
   text-align: center;
 }
 header .mobile-menu .menu-group.open .menu-group-btn img {
@@ -715,10 +715,10 @@ header .mobile-menu .menu-group .company-menu-group-btn {
   justify-content: center;
   max-width: 335px;
   width: 100%;
-  margin: 0 10px;
-  padding: 15px;
+  margin: 0 clamp(5px, 1vw, 10px);
+  padding: clamp(10px, 1.5vw, 15px);
   color: white;
-  font-size: 24px;
+  font-size: clamp(16px, 2.4vw, 24px);
   font-family: "18ExpandedRegular", sans-serif;
   background: rgba(166, 193, 245, 0.18);
   backdrop-filter: blur(25px);
@@ -726,13 +726,13 @@ header .mobile-menu .menu-group .company-menu-group-btn {
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
-  gap: 10px;
+  gap: clamp(5px, 1vw, 10px);
   position: relative;
   box-sizing: border-box;
   border-top: none;
   border-bottom: none;
-  border-left: 1px solid #B1CAFA;
-  border-right: 1px solid #B1CAFA;
+  border-left: 1px solid #b1cafa;
+  border-right: 1px solid #b1cafa;
   flex-shrink: 0;
   align-self: flex-start;
 }
@@ -849,7 +849,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   header .mobile-menu .menu-group.open .submenu {
     background: none;
     backdrop-filter: none;
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid #ffffff;
   }
 }
 .hero {
@@ -1285,9 +1285,9 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 100;
-  border-radius: 30px;
-  margin-top: -30px;
-  margin-bottom: -30px;
+  border-radius: clamp(20px, 2.083vw, 30px);
+  margin-top: clamp(-20px, -2.083vw, -30px);
+  margin-bottom: clamp(-20px, -2.083vw, -30px);
 }
 .solutions-and-services .container {
   width: 100%;
@@ -1302,7 +1302,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .solutions-and-services h2 {
   font-family: "28ExpandedRegular", sans-serif;
-  max-width: 288px;
+  max-width: clamp(200px, 20vw, 288px);
   font-size: clamp(32px, 4vw, 56px);
   margin-right: clamp(0px, 5vw, 74px);
   position: absolute;
@@ -1320,9 +1320,9 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .solutions-and-services .cards-solutions-and-services article {
   box-sizing: border-box;
-  padding: 0 24px 24px 24px;
+  padding: 0 clamp(12px, 1.667vw, 24px) clamp(12px, 1.667vw, 24px);
   background: rgba(254, 254, 255, 0.18);
-  border-radius: 20px;
+  border-radius: clamp(14px, 1.389vw, 20px);
   box-shadow: inset 5.46667px -5.46667px 5.46667px rgba(197, 197, 199, 0.32), inset -5.46667px 5.46667px 5.46667px rgba(255, 255, 255, 0.32);
   backdrop-filter: blur(82px);
   -webkit-backdrop-filter: blur(82px);
@@ -1333,8 +1333,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
   will-change: width, height;
   cursor: pointer;
-  width: 280px;
-  height: 356px;
+  width: clamp(220px, 19.444vw, 280px);
+  height: clamp(280px, 24.722vw, 356px);
 }
 .solutions-and-services .cards-solutions-and-services article::before {
   content: "";
@@ -1350,11 +1350,11 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .solutions-and-services .cards-solutions-and-services article h3 {
   font-family: "28ExpandedRegular", sans-serif;
-  margin-bottom: 16px;
-  padding-top: 15px;
-  font-size: 18px;
+  margin-bottom: clamp(8px, 1.111vw, 16px);
+  padding-top: clamp(8px, 1.042vw, 15px);
+  font-size: clamp(14px, 1.25vw, 18px);
   line-height: 1.1;
-  max-width: 240px;
+  max-width: clamp(180px, 16.667vw, 240px);
   transition: font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .solutions-and-services .cards-solutions-and-services article ul {
@@ -1369,18 +1369,18 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   font-weight: 300;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 6px;
-  font-size: 12pt;
+  gap: clamp(5px, 0.694vw, 10px);
+  margin-bottom: clamp(3px, 0.417vw, 6px);
+  font-size: clamp(10pt, 0.833vw, 12pt);
   line-height: 110%;
   max-width: 100%;
   width: 100%;
   transition: font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .solutions-and-services .cards-solutions-and-services article ul li img {
-  width: 5.9px;
-  height: 5.9px;
-  margin-top: 4px;
+  width: clamp(4px, 0.41vw, 5.9px);
+  height: clamp(4px, 0.41vw, 5.9px);
+  margin-top: clamp(2px, 0.278vw, 4px);
   flex-shrink: 0;
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -1390,18 +1390,18 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 147px;
-  height: 42px;
+  width: clamp(120px, 10.208vw, 147px);
+  height: clamp(34px, 2.917vw, 42px);
   color: #ffffff;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: clamp(8px, 0.694vw, 10px);
   position: relative;
-  background: linear-gradient(176.75deg, #17203F 2.81%, #5B6893 97.46%);
-  font-size: 14px;
+  background: linear-gradient(176.75deg, #17203f 2.81%, #5b6893 97.46%);
+  font-size: clamp(12px, 0.972vw, 14px);
   box-sizing: border-box;
   z-index: 1;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(clamp(6px, 0.833vw, 12px));
   transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease, box-shadow 0.3s ease;
   pointer-events: none;
 }
@@ -1409,35 +1409,35 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 10px;
+  border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(180deg, #1A1935 0%, #807DC9 100%);
+  background: linear-gradient(180deg, #1a1935 0%, #807dc9 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
 }
 .solutions-and-services .cards-solutions-and-services article a:hover {
-  background: linear-gradient(176.75deg, #17203F 2.81%, #5E77CD 97.46%);
+  background: linear-gradient(176.75deg, #17203f 2.81%, #5e77cd 97.46%);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 .solutions-and-services .cards-solutions-and-services article:hover {
-  width: 400px;
-  height: 420px;
+  width: clamp(320px, 27.778vw, 400px);
+  height: clamp(340px, 29.167vw, 420px);
   box-shadow: inset 5.46667px -5.46667px 5.46667px rgba(197, 197, 199, 0.32), inset -5.46667px 5.46667px 5.46667px rgba(255, 255, 255, 0.32), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
 .solutions-and-services .cards-solutions-and-services article:hover h3 {
-  font-size: 24px;
+  font-size: clamp(18px, 1.667vw, 24px);
   color: #0e1428;
 }
 .solutions-and-services .cards-solutions-and-services article:hover ul li {
-  font-size: 12pt;
+  font-size: clamp(10pt, 0.833vw, 12pt);
   max-width: 100%;
 }
 .solutions-and-services .cards-solutions-and-services article:hover ul li img {
-  width: 7.08px;
-  height: 7.08px;
+  width: clamp(5px, 0.49vw, 7.08px);
+  height: clamp(5px, 0.49vw, 7.08px);
 }
 .solutions-and-services .cards-solutions-and-services article:hover a {
   opacity: 1;
@@ -1550,6 +1550,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   position: relative;
   height: clamp(700px, 66vw, 951px);
   padding-bottom: clamp(50px, 7vw, 100px);
+  overflow: hidden;
 }
 .advantages::before {
   content: "";
@@ -1567,7 +1568,6 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   overflow: hidden;
 }
 .advantages .container {
-  max-width: 1440px;
   margin: 0 auto;
   padding: 0 clamp(16px, 4vw, 56px);
   height: 100%;
@@ -1575,13 +1575,17 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   flex-direction: column;
   position: relative;
   z-index: 1;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .advantages h2 {
   font-family: "28ExpandedRegular", sans-serif;
   font-size: clamp(32px, 4vw, 56px);
   margin: 0;
   line-height: 1.1;
-  transform: translateY(5px);
+  transform: translateY(clamp(2px, 0.35vw, 5px));
 }
 .advantages h2 span {
   display: block;
@@ -1592,6 +1596,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   flex-direction: row;
   align-items: center;
   margin-bottom: clamp(24px, 4vw, 50px);
+  max-width: 100%;
 }
 .advantages .advantages-top .advantages-title-row {
   display: flex;
@@ -1601,21 +1606,21 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   width: clamp(80px, 16vw, 240px);
   height: 1px;
   object-fit: contain;
-  transform: translateY(-38px);
+  transform: translateY(clamp(-20px, -2.64vw, -38px));
 }
 .advantages .advantages-top p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
   font-size: clamp(11pt, 1vw, 14pt);
   line-height: 1.4;
-  max-width: 600px;
+  max-width: clamp(280px, 41.667vw, 600px);
   margin: 0;
 }
 .advantages .advantages__progress-container {
   width: 100%;
-  height: 2px;
+  height: clamp(1px, 0.14vw, 2px);
   background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 2.78vw, 40px);
   position: relative;
   display: none;
 }
@@ -1632,6 +1637,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   position: relative;
   cursor: grab;
   user-select: none;
+  overflow: hidden;
+  max-width: 100%;
 }
 .advantages .advantages__slider-viewport:active {
   cursor: grabbing;
@@ -1641,11 +1648,10 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   gap: 0;
   align-items: center;
   font-family: "PF Encore Sans Pro", sans-serif;
-  font-size: 16pt;
+  font-size: clamp(12pt, 1.11vw, 16pt);
   font-weight: 300;
   width: max-content;
   will-change: transform;
-  transition: transform 0.1s ease-out;
 }
 .advantages .advantages__track * {
   font-weight: inherit;
@@ -1662,10 +1668,10 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 clamp(12px, 1.39vw, 20px);
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 16pt;
+  font-size: clamp(12pt, 1.11vw, 16pt);
   background: linear-gradient(93.43deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 47.66%, rgba(255, 255, 255, 0.15) 100%);
   border: 1px solid rgba(160, 178, 212, 0.4);
   backdrop-filter: blur(11px);
@@ -1677,57 +1683,66 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   position: relative;
 }
 .advantages .adv:nth-child(5n+1) {
-  width: 269px;
-  height: 91px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  width: clamp(200px, 18.68vw, 269px);
+  height: clamp(68px, 6.32vw, 91px);
+  border-top-left-radius: clamp(14px, 1.39vw, 20px);
+  border-bottom-left-radius: clamp(14px, 1.39vw, 20px);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   z-index: 1;
   margin-right: -5px;
 }
 .advantages .adv:nth-child(5n+2) {
-  width: 273px;
-  height: 107px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  width: clamp(204px, 18.96vw, 273px);
+  height: clamp(80px, 7.43vw, 107px);
+  border-top-left-radius: clamp(14px, 1.39vw, 20px);
+  border-bottom-left-radius: clamp(14px, 1.39vw, 20px);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   z-index: 2;
   margin-right: -5px;
 }
 .advantages .adv:nth-child(5n+3) {
-  width: 349px;
-  height: 128px;
-  border-radius: 20px;
-  font-size: 16px;
+  width: clamp(260px, 24.24vw, 349px);
+  height: clamp(96px, 8.89vw, 128px);
+  border-radius: clamp(14px, 1.39vw, 20px);
+  font-size: clamp(12px, 1.11vw, 16px);
   opacity: 1;
   transform: scale(1);
   z-index: 3;
 }
 .advantages .adv:nth-child(5n+4) {
-  width: 273px;
-  height: 107px;
+  width: clamp(204px, 18.96vw, 273px);
+  height: clamp(80px, 7.43vw, 107px);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: clamp(14px, 1.39vw, 20px);
+  border-bottom-right-radius: clamp(14px, 1.39vw, 20px);
   z-index: 2;
   margin-left: -5px;
 }
 .advantages .adv:nth-child(5n+5) {
-  width: 269px;
-  height: 91px;
+  width: clamp(200px, 18.68vw, 269px);
+  height: clamp(68px, 6.32vw, 91px);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: clamp(14px, 1.39vw, 20px);
+  border-bottom-right-radius: clamp(14px, 1.39vw, 20px);
   z-index: 1;
   margin-left: -5px;
+}
+@media (min-width: 1025px) {
+  .advantages .container {
+    max-width: 1440px;
+  }
 }
 @media (max-width: 1024px) {
   .advantages .container {
     padding: 0 30px;
+    max-width: 100%;
+  }
+  .advantages .advantages-top {
+    max-width: 100%;
   }
   .advantages .advantages-top .advantages-title-row img {
     transform: translateY(0);
@@ -1736,6 +1751,10 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   }
   .advantages .advantages-top h2 {
     font-size: 42px;
+  }
+  .advantages .advantages__slider-viewport {
+    overflow: hidden;
+    max-width: 100%;
   }
   .advantages .adv {
     transform: none;
@@ -1765,12 +1784,14 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   }
   .advantages .container {
     padding: 0 20px;
+    max-width: 100%;
   }
   .advantages .advantages-top {
     padding-top: 60px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    max-width: 100%;
   }
   .advantages .advantages-top .advantages-title-row {
     flex-direction: column;
@@ -1795,6 +1816,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     touch-action: pan-y;
     cursor: grab;
     overflow: hidden;
+    max-width: 100%;
   }
   .advantages .adv:nth-child(n) {
     width: 260px;
@@ -1834,31 +1856,31 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   margin-left: clamp(0px, 2.8vw, 40px);
 }
 .news .news__header div img {
-  width: 120px;
+  width: clamp(80px, 8.33vw, 120px);
 }
 .news .news__header div p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: clamp(14px, 1.39vw, 20px);
   line-height: 110%;
-  max-width: 300px;
+  max-width: clamp(220px, 20.83vw, 300px);
   margin: 0;
-  margin-top: 15px;
+  margin-top: clamp(8px, 1.04vw, 15px);
 }
 .news a {
-  transform: translateX(35px);
+  transform: translateX(clamp(20px, 2.43vw, 35px));
   background: linear-gradient(180deg, #e4200e -3.57%, #e44e0e 100%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 285px;
-  height: 42px;
-  border-radius: 10px;
+  width: clamp(200px, 19.79vw, 285px);
+  height: clamp(34px, 2.92vw, 42px);
+  border-radius: clamp(8px, 0.69vw, 10px);
   cursor: pointer;
   color: white;
   text-decoration: none;
   font-family: "28ExpandedRegular", sans-serif;
-  font-size: 16px;
+  font-size: clamp(13px, 1.11vw, 16px);
   line-height: 1;
   position: relative;
   z-index: 1;
@@ -1868,7 +1890,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 10px;
+  border-radius: inherit;
   padding: 1px;
   background: linear-gradient(0deg, rgba(255, 113, 100, 0) 0%, #ff7164 53.85%, rgba(255, 113, 100, 0) 99.04%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -1888,15 +1910,15 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: grid;
   grid-template-columns: 1.3fr 0.9fr 0.9fr 0.9fr;
   grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
+  gap: clamp(12px, 1.39vw, 20px);
   position: relative;
   z-index: 1;
   padding-right: 0;
 }
 .news .news__grid article {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 25px;
+  border-radius: clamp(14px, 1.39vw, 20px);
+  padding: clamp(16px, 1.74vw, 25px);
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
@@ -1906,7 +1928,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 20px;
+  border-radius: inherit;
   padding: 1px;
   background: linear-gradient(311.48deg, rgba(160, 178, 212, 0) 2.18%, #a0b2d4 49.32%, rgba(160, 178, 212, 0) 97.82%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -1917,9 +1939,9 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .news .news__grid article h3 {
   font-family: "28ExpandedRegular", sans-serif;
   font-weight: 400;
-  font-size: 15pt;
+  font-size: clamp(12pt, 1.04vw, 15pt);
   line-height: 110%;
-  margin: 0 0 15px 0;
+  margin: 0 0 clamp(10px, 1.04vw, 15px) 0;
 }
 .news .news__grid article h3 a {
   background: none;
@@ -1946,7 +1968,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .news .news__grid article p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 10pt;
+  font-size: clamp(9pt, 0.69vw, 10pt);
   line-height: 110%;
   opacity: 0.7;
   margin: 0;
@@ -1954,7 +1976,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .news .news__grid article span {
   font-family: "BeauSans-Regular", sans-serif;
-  font-size: 12px;
+  font-size: clamp(10px, 0.83vw, 12px);
   opacity: 0.5;
   margin-top: auto;
   align-self: flex-end;
@@ -1965,65 +1987,65 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   background-image: linear-gradient(rgba(0, 16, 29, 0.4), rgba(0, 16, 29, 0.4)), url("../public/shatura.jpg");
   background-size: cover;
   background-position: center;
-  width: 370px;
-  height: 545px;
+  width: clamp(280px, 25.69vw, 370px);
+  height: clamp(400px, 37.85vw, 545px);
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 40px 40px 40px 30px;
+  padding: clamp(20px, 2.78vw, 40px) clamp(20px, 2.78vw, 40px) clamp(20px, 2.78vw, 40px) clamp(16px, 2.08vw, 30px);
 }
 .news .news__grid .card-shatura span {
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: clamp(16px, 1.74vw, 25px);
   align-self: flex-start;
 }
 .news .news__grid .card-shatura h3 {
   font-family: "28ExpandedMedium", sans-serif;
   font-weight: 500;
-  font-size: 24px;
+  font-size: clamp(18px, 1.67vw, 24px);
   line-height: 110%;
-  max-width: 420px;
+  max-width: clamp(300px, 29.17vw, 420px);
   text-align: left;
 }
 .news .news__grid .card-shatura p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: clamp(13px, 1.11vw, 16px);
   line-height: 110%;
-  max-width: 232px;
+  max-width: clamp(180px, 16.11vw, 232px);
   text-align: left;
   align-self: flex-start;
 }
 .news .news__grid .card-alcea {
   grid-column: 2/3;
   grid-row: 1/2;
-  width: 275px;
-  height: 211px;
+  width: clamp(220px, 19.1vw, 275px);
+  height: clamp(170px, 14.65vw, 211px);
 }
 .news .news__grid .card-orion {
   grid-column: 2/3;
   grid-row: 2/3;
-  width: 275px;
-  height: 301px;
-  transform: translateY(-100px);
+  width: clamp(220px, 19.1vw, 275px);
+  height: clamp(240px, 20.9vw, 301px);
+  transform: translateY(clamp(-70px, -6.94vw, -100px));
 }
 .news .news__grid .card-delta {
   grid-column: 3/4;
   grid-row: 1/2;
-  width: 275px;
-  height: 299px;
+  width: clamp(220px, 19.1vw, 275px);
+  height: clamp(240px, 20.76vw, 299px);
 }
 .news .news__grid .card-astra {
   grid-column: 3/4;
   grid-row: 2/3;
-  width: 275px;
-  height: 211px;
-  transform: translateY(-10px);
+  width: clamp(220px, 19.1vw, 275px);
+  height: clamp(170px, 14.65vw, 211px);
+  transform: translateY(clamp(-5px, -0.69vw, -10px));
 }
 .news .news__grid .card-rapporto {
   grid-column: 4/5;
   grid-row: 1/3;
-  width: 285px;
-  height: 565px;
+  width: clamp(220px, 19.79vw, 285px);
+  height: clamp(440px, 39.24vw, 565px);
 }
 
 @media (max-width: 1200px) {
@@ -2206,6 +2228,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   padding: 0 clamp(16px, 4vw, 56px);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .partners .partners__header {
   display: flex;
@@ -2268,6 +2291,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   align-items: center;
   justify-items: center;
   width: 100%;
+  max-width: 100%;
   will-change: transform;
 }
 .partners .partners__grid img {
@@ -2346,6 +2370,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-bottom: 48px;
+    overflow: hidden;
   }
   .partners .partners__grid {
     display: grid;
@@ -2353,6 +2378,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
     grid-auto-flow: column;
     grid-template-columns: none;
     width: max-content;
+    max-width: none;
     height: auto;
     row-gap: 40px;
     column-gap: 80px;
@@ -2594,10 +2620,10 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .achievements {
   padding: clamp(70px, 8vw, 120px) 0;
-  background: linear-gradient(180deg, #00101D 0%, rgba(0, 16, 29, 0) 100%), url("../public/main-cubes.png") no-repeat center;
+  background: linear-gradient(180deg, #00101d 0%, rgba(0, 16, 29, 0) 100%), url("../public/main-cubes.png") no-repeat center;
   background-size: cover;
   color: #ffffff;
-  min-height: 600px;
+  min-height: clamp(400px, 41.667vw, 600px);
   display: flex;
   align-items: center;
   position: relative;
@@ -2606,10 +2632,10 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .achievements::before {
   content: "";
   position: absolute;
-  bottom: -150px;
-  left: -150px;
-  width: 300px;
-  height: 200px;
+  bottom: clamp(-100px, -10.417vw, -150px);
+  left: clamp(-100px, -10.417vw, -150px);
+  width: clamp(200px, 20.833vw, 300px);
+  height: clamp(140px, 13.889vw, 200px);
   background: radial-gradient(circle, rgba(228, 32, 14, 0.85) 0%, rgb(228, 32, 14) 70%);
   filter: blur(100px);
   pointer-events: none;
@@ -2633,11 +2659,11 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .achievements .achievements__title-block {
   flex-shrink: 0;
   position: sticky;
-  top: 120px;
+  top: clamp(80px, 8.333vw, 120px);
 }
 .achievements .achievements__title-block h2 {
   font-family: "28ExtraExpandedRegular", sans-serif;
-  font-size: 56px;
+  font-size: clamp(36px, 3.889vw, 56px);
   line-height: 1.1;
   margin: 0 0 clamp(16px, 2vw, 30px) 0;
 }
@@ -2649,12 +2675,12 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .achievements .achievements__select-wrapper {
   width: clamp(260px, 30vw, 421px);
   height: clamp(64px, 6vw, 86px);
-  padding: 0 22px;
+  padding: 0 clamp(12px, 1.528vw, 22px);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  border-radius: 19.5px;
+  border-radius: clamp(14px, 1.354vw, 19.5px);
   background: rgba(250, 250, 250, 0.1);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
@@ -2665,27 +2691,27 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   top: 50%;
-  width: 20px;
-  height: 64px;
+  width: clamp(14px, 1.389vw, 20px);
+  height: clamp(48px, 4.444vw, 64px);
   background: rgba(250, 250, 250, 0.05);
   border: 1px solid rgba(160, 178, 212, 0.3);
   backdrop-filter: blur(10px);
   z-index: -1;
 }
 .achievements .achievements__select-wrapper::before {
-  left: -20px;
+  left: clamp(-14px, -1.389vw, -20px);
   transform: translateY(-50%);
-  border-radius: 15px 0 0 15px;
+  border-radius: clamp(10px, 1.042vw, 15px) 0 0 clamp(10px, 1.042vw, 15px);
 }
 .achievements .achievements__select-wrapper::after {
-  right: -20px;
+  right: clamp(-14px, -1.389vw, -20px);
   transform: translateY(-50%);
-  border-radius: 0 15px 15px 0;
+  border-radius: 0 clamp(10px, 1.042vw, 15px) clamp(10px, 1.042vw, 15px) 0;
 }
 .achievements .achievements__select-wrapper .border-layer {
   position: absolute;
   inset: 0;
-  border-radius: 19.5px;
+  border-radius: inherit;
   padding: 1px;
   background: linear-gradient(165deg, rgba(108, 121, 144, 0.1), #a0b2d4, rgba(108, 121, 144, 0.1));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -2695,8 +2721,8 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .achievements .achievements__rhomb-btn {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: clamp(44px, 4.167vw, 60px);
+  height: clamp(44px, 4.167vw, 60px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2707,10 +2733,10 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .achievements .achievements__rhomb-btn::before {
   content: "";
   position: absolute;
-  width: 35px;
-  height: 35px;
+  width: clamp(26px, 2.431vw, 35px);
+  height: clamp(26px, 2.431vw, 35px);
   background: #afb5c5;
-  border-radius: 5px;
+  border-radius: clamp(3px, 0.347vw, 5px);
   transform: rotate(-45deg);
   backdrop-filter: blur(29px);
   -webkit-backdrop-filter: blur(29px);
@@ -2719,38 +2745,38 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .achievements .achievements__rhomb-btn::after {
   content: "";
   position: absolute;
-  width: 21.57px;
-  height: 21.57px;
+  width: clamp(16px, 1.498vw, 21.57px);
+  height: clamp(16px, 1.498vw, 21.57px);
   background: rgba(149, 156, 174, 0.8);
-  border-radius: 5px;
+  border-radius: clamp(3px, 0.347vw, 5px);
   transform: rotate(-45deg);
   backdrop-filter: blur(29px);
   -webkit-backdrop-filter: blur(29px);
-  left: 5px;
+  left: clamp(3px, 0.347vw, 5px);
   z-index: 1;
 }
 .achievements .achievements__rhomb-btn .rhomb-right {
   position: absolute;
-  width: 26px;
-  height: 26px;
-  border-radius: 5px;
-  right: 2px;
+  width: clamp(20px, 1.806vw, 26px);
+  height: clamp(20px, 1.806vw, 26px);
+  border-radius: clamp(3px, 0.347vw, 5px);
+  right: clamp(1px, 0.139vw, 2px);
   z-index: 1;
 }
 .achievements .achievements__rhomb-btn .arrow-icon {
-  width: 20px;
-  height: 11px;
+  width: clamp(15px, 1.389vw, 20px);
+  height: clamp(8px, 0.764vw, 11px);
   position: relative;
   z-index: 3;
   opacity: 1;
 }
 .achievements .achievements__arrow {
   display: flex;
-  width: 44px;
-  height: 72px;
+  width: clamp(34px, 3.056vw, 44px);
+  height: clamp(54px, 5vw, 72px);
   background: rgba(250, 250, 250, 0.1);
   backdrop-filter: blur(25px);
-  border-radius: 15px;
+  border-radius: clamp(10px, 1.042vw, 15px);
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -2761,7 +2787,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 15px;
+  border-radius: inherit;
   padding: 1px;
   background: linear-gradient(165deg, rgba(108, 121, 144, 0.1), #a0b2d4, rgba(108, 121, 144, 0.1));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -2770,14 +2796,14 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .achievements .achievements__arrow img {
   display: none;
-  width: 14px;
+  width: clamp(10px, 0.972vw, 14px);
   opacity: 0.8;
 }
 .achievements .achievements__arrow--left {
-  margin-right: -25px;
+  margin-right: clamp(-18px, -1.736vw, -25px);
 }
 .achievements .achievements__arrow--right {
-  margin-left: -25px;
+  margin-left: clamp(-18px, -1.736vw, -25px);
 }
 
 .achievements__select {
@@ -2788,18 +2814,18 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   align-items: center;
   justify-content: center;
   padding-left: 0;
-  padding-right: 5px;
+  padding-right: clamp(3px, 0.347vw, 5px);
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
 .achievements__select span {
   font-family: "28ExtraExpandedRegular", sans-serif;
-  font-size: 54px;
+  font-size: clamp(36px, 3.75vw, 54px);
   line-height: 1;
   white-space: nowrap;
   color: #fafafa;
   text-transform: lowercase;
-  margin-left: -10px;
+  margin-left: clamp(-6px, -0.694vw, -10px);
 }
 .achievements__select[data-pos="0"] {
   transform: translateX(0);
@@ -2824,22 +2850,22 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 
 .achievements__stats {
   display: grid;
-  grid-template-columns: repeat(2, 380px);
-  column-gap: 60px;
+  grid-template-columns: repeat(2, clamp(280px, 26.389vw, 380px));
+  column-gap: clamp(30px, 4.167vw, 60px);
   row-gap: 0;
   flex-grow: 1;
 }
 .achievements__stats .stat-item {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-bottom: 80px;
+  gap: clamp(6px, 0.694vw, 10px);
+  padding-bottom: clamp(50px, 5.556vw, 80px);
 }
 .achievements__stats .stat-item:nth-child(1) {
   grid-column: 1;
 }
 .achievements__stats .stat-item:nth-child(2) {
-  margin-top: 50px;
+  margin-top: clamp(30px, 3.472vw, 50px);
   grid-column: 2;
 }
 .achievements__stats .stat-item:nth-child(3) {
@@ -2847,7 +2873,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 }
 .achievements__stats .stat-item:nth-child(4) {
   grid-column: 2;
-  margin-top: 140px;
+  margin-top: clamp(90px, 9.722vw, 140px);
 }
 .achievements__stats .stat-item:nth-child(5) {
   grid-column: 1;
@@ -2855,16 +2881,16 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .achievements__stats .stat-item p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 20pt;
+  font-size: clamp(14pt, 1.389vw, 20pt);
   line-height: 110%;
   opacity: 0.6;
   margin: 0;
-  max-width: 300px;
+  max-width: clamp(220px, 20.833vw, 300px);
 }
 .achievements__stats .stat-item span {
   font-family: "28ExtraExpandedSemiBold", sans-serif;
   font-weight: 600;
-  font-size: 64pt;
+  font-size: clamp(40pt, 4.444vw, 64pt);
   line-height: 130%;
   white-space: nowrap;
 }
@@ -3053,18 +3079,18 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   top: 50%;
-  left: -19px;
-  width: 358px;
-  height: 427px;
+  left: clamp(-14px, -1.32vw, -19px);
+  width: clamp(240px, 24.86vw, 358px);
+  height: clamp(300px, 29.65vw, 427px);
   background: #ff1100;
   opacity: 1;
-  filter: blur(80px);
+  filter: blur(clamp(50px, 5.56vw, 80px));
   mix-blend-mode: screen;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
   border-radius: 50%;
-  box-shadow: 0 0 150px 50px rgba(255, 17, 0, 0.6);
+  box-shadow: 0 0 clamp(100px, 10.42vw, 150px) clamp(30px, 3.47vw, 50px) rgba(255, 17, 0, 0.6);
 }
 .feedback .container {
   margin: 0 auto;
@@ -3079,13 +3105,13 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   gap: clamp(28px, 7vw, 100px);
 }
 .feedback .feedback__info {
-  max-width: 320px;
+  max-width: clamp(240px, 22.22vw, 320px);
   flex-shrink: 0;
   margin-top: clamp(0px, 3vw, 40px);
 }
 .feedback .feedback__info h2 {
   font-family: "28ExtraExpandedRegular", sans-serif;
-  font-size: 56px;
+  font-size: clamp(36px, 3.89vw, 56px);
   line-height: 0.9;
   color: #ffffff;
   margin: 0 clamp(0px, 3.5vw, 50px) clamp(20px, 3.5vw, 50px) 0;
@@ -3093,38 +3119,38 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .feedback .feedback__info p {
   font-family: "PF Encore Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 20pt;
+  font-size: clamp(14pt, 1.39vw, 20pt);
   line-height: 110%;
   color: #ffffff;
   opacity: 0.8;
-  max-width: 220px;
+  max-width: clamp(160px, 15.28vw, 220px);
 }
 .feedback .feedback__form {
   background: #f4f6f9;
-  border-radius: 40px;
+  border-radius: clamp(24px, 2.78vw, 40px);
   padding: clamp(28px, 4.2vw, 60px) clamp(20px, 5.5vw, 80px);
   flex-grow: 1;
-  width: 1008px;
+  width: clamp(320px, 70vw, 1008px);
 }
 .feedback .feedback__form .form-row {
   display: flex;
-  gap: 30px;
-  margin-bottom: 22px;
+  gap: clamp(16px, 2.08vw, 30px);
+  margin-bottom: clamp(14px, 1.53vw, 22px);
 }
 .feedback .feedback__form .form-row .form-group {
   flex: 1;
   margin-bottom: 0;
 }
 .feedback .feedback__form .form-group {
-  margin-bottom: 22px;
+  margin-bottom: clamp(14px, 1.53vw, 22px);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: clamp(5px, 0.56vw, 8px);
 }
 .feedback .feedback__form .form-group label {
   font-family: "18ExpandedSemiBold", sans-serif;
   font-weight: 600;
-  font-size: 13pt;
+  font-size: clamp(11pt, 0.9vw, 13pt);
   line-height: 120%;
   color: #0d1b3e;
 }
@@ -3139,19 +3165,19 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 15px 20px;
-  gap: 10px;
+  padding: clamp(10px, 1.04vw, 15px) clamp(14px, 1.39vw, 20px);
+  gap: clamp(6px, 0.69vw, 10px);
   width: 100%;
-  height: 52px;
+  height: clamp(40px, 3.61vw, 52px);
   background: rgba(254, 254, 255, 0.44);
   box-shadow: inset 3px -3px 3px rgba(197, 197, 199, 0.496), inset -3px 3px 3px rgba(255, 255, 255, 0.496);
   backdrop-filter: blur(82px);
-  border-radius: 10px;
+  border-radius: clamp(7px, 0.69vw, 10px);
   border: none;
   font-family: "BeauSans-Regular", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 15pt;
+  font-size: clamp(12pt, 1.04vw, 15pt);
   line-height: 120%;
   color: #0d1b3e;
   outline: none;
@@ -3161,13 +3187,13 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
 .feedback .feedback__form .form-group textarea::placeholder {
   font-family: "BeauSans-Regular", sans-serif;
   font-weight: 400;
-  font-size: 15pt;
+  font-size: clamp(12pt, 1.04vw, 15pt);
   line-height: 120%;
   color: #a0b2d4;
 }
 .feedback .feedback__form .form-group textarea {
   font-family: "BeauSans-Regular", sans-serif;
-  height: 120px;
+  height: clamp(90px, 8.33vw, 120px);
   align-items: flex-start;
   resize: none;
 }
@@ -3175,104 +3201,104 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   appearance: none;
   background-image: url("../public/arrow-down.png");
   background-repeat: no-repeat;
-  background-position: right 20px center;
-  background-size: 12px;
+  background-position: right clamp(14px, 1.39vw, 20px) center;
+  background-size: clamp(9px, 0.83vw, 12px);
 }
 .feedback .feedback__form .file-upload {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(137deg, #30466f 0%, #3f5c90 52%, #2b3f67 100%);
-  border-radius: 10px;
-  padding: 12px 20px;
+  border-radius: clamp(7px, 0.69vw, 10px);
+  padding: clamp(8px, 0.83vw, 12px) clamp(14px, 1.39vw, 20px);
   cursor: pointer;
-  height: 52px;
+  height: clamp(40px, 3.61vw, 52px);
   box-sizing: border-box;
 }
 .feedback .feedback__form .file-upload span {
   color: #ffffff;
   font-family: "BeauSans-Regular", sans-serif;
-  font-size: 15px;
+  font-size: clamp(12px, 1.04vw, 15px);
 }
 .feedback .feedback__form .file-upload img {
-  width: 20px;
-  height: 20px;
+  width: clamp(15px, 1.39vw, 20px);
+  height: clamp(15px, 1.39vw, 20px);
 }
 .feedback .feedback__form .form-bottom {
-  margin-top: 28px;
+  margin-top: clamp(18px, 1.94vw, 28px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: clamp(12px, 1.39vw, 20px);
 }
 .feedback .feedback__form .form-bottom .checkbox-label {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(8px, 0.83vw, 12px);
   cursor: pointer;
 }
 .feedback .feedback__form .form-bottom .checkbox-label input {
-  width: 20px;
-  height: 20px;
+  width: clamp(16px, 1.39vw, 20px);
+  height: clamp(16px, 1.39vw, 20px);
   flex-shrink: 0;
   appearance: none;
   -webkit-appearance: none;
   background: rgba(160, 178, 212, 0.35);
   border: 1px solid rgba(160, 178, 212, 0.85);
-  border-radius: 4px;
+  border-radius: clamp(3px, 0.28vw, 4px);
   position: relative;
   cursor: pointer;
 }
 .feedback .feedback__form .form-bottom .checkbox-label input:checked::after {
   content: "";
   position: absolute;
-  left: 6px;
-  top: 3px;
-  width: 6px;
-  height: 10px;
+  left: clamp(4px, 0.42vw, 6px);
+  top: clamp(2px, 0.21vw, 3px);
+  width: clamp(4px, 0.42vw, 6px);
+  height: clamp(7px, 0.69vw, 10px);
   border: solid #5f6d8d;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 .feedback .feedback__form .form-bottom .checkbox-label span {
   font-family: "BeauSans-Regular", sans-serif;
-  font-size: 14px;
+  font-size: clamp(11px, 0.97vw, 14px);
   color: #0d1b3e;
-  max-width: 300px;
+  max-width: clamp(220px, 20.83vw, 300px);
 }
 .feedback .feedback__form .form-bottom .form-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: clamp(12px, 1.39vw, 20px);
 }
 .feedback .feedback__form .form-bottom .form-actions .captcha {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 8px 12px;
+  padding: clamp(5px, 0.56vw, 8px) clamp(8px, 0.83vw, 12px);
   display: flex;
   align-items: center;
-  gap: 10px;
-  border-radius: 8px;
+  gap: clamp(6px, 0.69vw, 10px);
+  border-radius: clamp(5px, 0.56vw, 8px);
 }
 .feedback .feedback__form .form-bottom .form-actions .captcha input {
-  width: 20px;
-  height: 20px;
+  width: clamp(16px, 1.39vw, 20px);
+  height: clamp(16px, 1.39vw, 20px);
 }
 .feedback .feedback__form .form-bottom .form-actions .btn-news {
-  width: 285px;
-  height: 42px;
+  width: clamp(200px, 19.79vw, 285px);
+  height: clamp(34px, 2.92vw, 42px);
   border: none;
   transform: none;
   background: linear-gradient(180deg, #e4200e -3.57%, #e44e0e 100%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: clamp(7px, 0.69vw, 10px);
   cursor: pointer;
   color: #ffffff;
   text-decoration: none;
   font-family: "28ExpandedRegular", sans-serif;
-  font-size: 16px;
+  font-size: clamp(13px, 1.11vw, 16px);
   line-height: 1;
   position: relative;
   z-index: 1;
@@ -3282,7 +3308,7 @@ header .mobile-menu .menu-group .company-menu-group-btn img {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 10px;
+  border-radius: inherit;
   padding: 1px;
   background: linear-gradient(0deg, rgba(255, 113, 100, 0) 0%, #ff7164 53.85%, rgba(255, 113, 100, 0) 99.04%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -3492,7 +3518,7 @@ footer .footer__contacts-block .footer__contacts-content {
 footer .footer__contacts-block .footer__contacts-content .footer__contact-info {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(8px, 0.83vw, 12px);
   flex-shrink: 0;
 }
 footer .footer__contacts-block .footer__contacts-content .footer__contact-info a {
@@ -3542,13 +3568,13 @@ footer .footer__legal a:hover {
 @media (max-width: 1024px) {
   footer .footer__top {
     flex-direction: column;
-    margin-bottom: 40px;
-    gap: 40px;
+    margin-bottom: clamp(30px, 5vw, 40px);
+    gap: clamp(30px, 5vw, 40px);
   }
   footer .footer__nav {
     width: 100%;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: clamp(30px, 5vw, 40px);
     padding-right: 0;
     margin-top: 0;
   }
@@ -3558,15 +3584,15 @@ footer .footer__legal a:hover {
 }
 @media (max-width: 768px) {
   footer {
-    padding: 40px 0 30px;
+    padding: clamp(30px, 8vw, 40px) 0 clamp(20px, 6vw, 30px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
   footer .container {
-    padding: 0 20px;
+    padding: 0 clamp(12px, 4vw, 20px);
   }
   footer .footer__top {
-    gap: 30px;
-    margin-bottom: 30px;
+    gap: clamp(20px, 6vw, 30px);
+    margin-bottom: clamp(20px, 6vw, 30px);
   }
   footer .footer__brand-wrapper {
     width: 100%;
@@ -3582,53 +3608,53 @@ footer .footer__legal a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   footer .footer__nav .footer__column .footer__column-header {
-    padding: 15px 0;
+    padding: clamp(12px, 3vw, 15px) 0;
     cursor: pointer;
   }
   footer .footer__nav .footer__column h3 {
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: clamp(13px, 2.8vw, 14px);
   }
   footer .footer__nav .footer__column .footer__mobile-arrow {
     display: block;
-    width: 16px;
+    width: clamp(14px, 3vw, 16px);
     opacity: 0.5;
   }
   footer .footer__nav .footer__column ul {
     display: none;
-    padding-bottom: 15px;
+    padding-bottom: clamp(12px, 3vw, 15px);
   }
   footer .footer__contacts-block {
-    margin-top: 20px;
+    margin-top: clamp(15px, 4vw, 20px);
     min-width: 0;
   }
   footer .footer__contacts-block h3 {
-    font-size: 14px;
-    margin-bottom: 15px;
+    font-size: clamp(13px, 2.8vw, 14px);
+    margin-bottom: clamp(12px, 3vw, 15px);
   }
   footer .footer__contacts-block .footer__contacts-content {
     flex-direction: row;
-    gap: 20px;
+    gap: clamp(15px, 4vw, 20px);
   }
   footer .footer__contacts-block .footer__contacts-content .footer__contact-info,
   footer .footer__contacts-block .footer__contacts-content address {
     max-width: 45%;
-    font-size: 12px;
+    font-size: clamp(11px, 2.4vw, 12px);
   }
   footer .footer__legal {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding-top: 20px;
+    gap: clamp(12px, 3vw, 15px);
+    padding-top: clamp(15px, 4vw, 20px);
   }
   footer .footer__legal a {
-    font-size: 12px;
+    font-size: clamp(11px, 2.4vw, 12px);
   }
   footer .footer__legal span {
     grid-column: span 2;
     margin-left: 0;
-    font-size: 12px;
-    padding-top: 10px;
+    font-size: clamp(11px, 2.4vw, 12px);
+    padding-top: clamp(8px, 2vw, 10px);
   }
 }
 
