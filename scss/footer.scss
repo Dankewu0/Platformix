@@ -4,6 +4,7 @@ footer {
   color: #ffffff;
   position: relative;
   border-top: none;
+  overflow: hidden;
 
   .container {
     max-width: clamp(320px, 96vw, 1440px);
@@ -11,6 +12,8 @@ footer {
     flex-wrap: wrap;
     margin: 0 auto;
     padding: 0 clamp(16px, 4vw, 56px);
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .footer__top {
@@ -47,6 +50,8 @@ footer {
   }
 
   .footer__column {
+    min-width: 0;
+
     .footer__column-header {
       display: flex;
       align-items: center;
@@ -100,6 +105,7 @@ footer {
 
     a {
       display: flex;
+      flex-shrink: 0;
       img {
         width: clamp(24px, 2.3vw, 32px);
         height: clamp(24px, 2.3vw, 32px);
@@ -111,16 +117,19 @@ footer {
   .footer__bottom-grid {
     display: flex;
     flex-direction: column;
+    min-width: 0;
   }
 
   .footer__contacts-block {
     display: flex;
     flex-direction: column;
     min-width: clamp(220px, 22vw, 280px);
+    max-width: 100%;
 
     .footer__contacts-content {
       display: flex;
       gap: clamp(16px, 2vw, 30px);
+      flex-wrap: wrap;
 
       .footer__contact-info {
         display: flex;
@@ -163,6 +172,8 @@ footer {
     font-weight: 300;
     font-size: clamp(12px, 0.95vw, 14px);
     line-height: 110%;
+    flex-wrap: wrap;
+    min-width: 0;
 
     span {
       opacity: 0.5;
@@ -180,10 +191,8 @@ footer {
       }
     }
   }
-}
 
-@media (max-width: 1024px) {
-  footer {
+  @media (max-width: 1024px) {
     .footer__top {
       flex-direction: column;
       margin-bottom: clamp(30px, 5vw, 40px);
@@ -198,12 +207,15 @@ footer {
     }
     .footer__contacts-block {
       width: 100%;
+      min-width: 0;
+      max-width: 100%;
+    }
+    .footer__legal {
+      min-width: 0;
     }
   }
-}
 
-@media (max-width: 768px) {
-  footer {
+  @media (max-width: 768px) {
     padding: clamp(30px, 8vw, 40px) 0 clamp(20px, 6vw, 30px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -220,6 +232,10 @@ footer {
       width: 100%;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .footer__socials {
+      margin-left: 0;
     }
 
     .footer__nav {
@@ -279,6 +295,7 @@ footer {
       grid-template-columns: 1fr 1fr;
       gap: clamp(12px, 3vw, 15px);
       padding-top: clamp(15px, 4vw, 20px);
+      min-width: 0;
 
       a {
         font-size: clamp(11px, 2.4vw, 12px);
@@ -289,6 +306,7 @@ footer {
         margin-left: 0;
         font-size: clamp(11px, 2.4vw, 12px);
         padding-top: clamp(8px, 2vw, 10px);
+        min-width: 0;
       }
     }
   }

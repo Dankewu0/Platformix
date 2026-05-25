@@ -159,6 +159,11 @@
     padding: 60px 0;
     margin-top: -30px;
     margin-bottom: -30px;
+    overflow: hidden;
+
+    .container {
+      overflow: hidden;
+    }
 
     .partners__header {
       flex-direction: column;
@@ -184,6 +189,7 @@
 
     .partners__wrapper {
       width: 100vw;
+      max-width: 100vw;
       margin-left: calc(-50vw + 50%);
       margin-bottom: 48px;
       overflow: hidden;
@@ -219,6 +225,11 @@
     padding: 40px 0;
     margin-top: -20px;
     margin-bottom: -20px;
+    overflow: hidden;
+
+    .container {
+      overflow: hidden;
+    }
 
     .partners__header {
       margin-bottom: 32px;
@@ -230,11 +241,17 @@
       }
     }
 
+    .partners__wrapper {
+      overflow: hidden;
+    }
+
     .partners__grid {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       column-gap: 40px;
+      max-width: 100%;
+      overflow: hidden;
 
       img {
         height: 37px;
